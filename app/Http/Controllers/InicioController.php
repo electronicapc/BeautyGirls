@@ -10,5 +10,9 @@ class InicioController extends Controller
     {
         return view('galeria');
     }
-	
+    
+    public function single()
+    {
+    	return view('single');
+    }
 }
