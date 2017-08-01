@@ -78,6 +78,17 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+    		
+    		'sqlsrv' => [
+    				'driver' => 'sqlsrv',
+    				//'host' => env('DB_HOST', 'LCOBGVITR8919\MSSQLSERVER'),
+    				'host' => env('DB_HOST', 'localhost'),
+    				'database' => env('DB_DATABASE', ''),
+    				//'username' => env('DB_USERNAME', 'forge'),
+    				//'password' => env('DB_PASSWORD', ''),
+    				'charset' => 'utf8',
+    				'prefix' => '',
+    		],
 
     ],
 
