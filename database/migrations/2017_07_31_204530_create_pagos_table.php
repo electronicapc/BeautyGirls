@@ -15,6 +15,12 @@ class CreatePagosTable extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idGirl');
+            $table->string('mes');
+            $table->integer('valpag');
+            $table->string('medpag');
+            $table->string('refpag')->nullable();
+            $table->foreign('idGirl')->references('id')->on('girls')->onDelete('cascade');            
             $table->timestamps();
         });
     }
