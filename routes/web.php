@@ -14,3 +14,7 @@
 //Rutas para publicar productos
 Route::get('/','InicioController@index');
 Route::get('/single/{id}','InicioController@single')->where(['id' => '[0-9]+']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
