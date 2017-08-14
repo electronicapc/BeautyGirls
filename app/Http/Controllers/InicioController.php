@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Girl;
+use App\Servshow;
+use DB;
 
 class InicioController extends Controller
 {
@@ -11,8 +14,15 @@ class InicioController extends Controller
         return view('galeria');
     }
     
-    public function single()
+    public function single($id)
     {
-    	return view('single');
+
+    	$girls		= Girl::where('id', $id)->get()->first();
+    	$lists		= DB::table('services')
+    	->join('servshows', 'services.id', '=', 'servshows.idService')
+    	->where('servshows.idGirl', '=', $id)
+    	->get();
+    	
+    	return view('single')->with('lists', $lists)->with('girls', $girls);
     }
 }
