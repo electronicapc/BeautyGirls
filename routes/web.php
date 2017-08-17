@@ -15,6 +15,8 @@
 Route::get('/','InicioController@index');
 Route::get('/single/{id}','InicioController@single')->where(['id' => '[0-9]+']);
 
+Route::post('filmod','InicioController@filter');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

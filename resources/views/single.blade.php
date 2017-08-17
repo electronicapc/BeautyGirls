@@ -12,7 +12,7 @@
 			  
 			  </ol>
 			  @php 
-                 $imgpath = asset('../storage/app/models').'/'.$girls->id.'.jpg4'
+                 $imgpath = asset('../storage/app/models').'/'.$girls->id.'.jpg'
               @endphp
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">

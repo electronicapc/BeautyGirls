@@ -11,7 +11,13 @@ class InicioController extends Controller
 {
     public function index()
     {
-        return view('galeria');
+    	$girls		= Girl::where('activo', 'SI')->get();
+        return view('galeria')->with('girls', $girls);;
+    }
+    
+    public function filter()
+    {
+    	return view('galeria');
     }
     
     public function single($id)
