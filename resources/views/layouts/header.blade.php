@@ -114,47 +114,47 @@
 									      		<dt><label>Estatura	</label></dt>	
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">150 cm a 160 cm</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="E1" class="hidden" checked />
 											    </span>	
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">160 cm a 170 cm</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="E2" class="hidden" checked />
 											    </span>	
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">+ 170 cm</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="E3" class="hidden" checked />
 											    </span>	</dd>
 											    <hr />
 											    <dt><label>Color piel</label></dt>
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">Blanca</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="CP1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">Morena</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="CP2" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">negra</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="CP3" class="hidden" checked />
 											    </span></dd>
 											    <hr />	
 											    <dt><label>Inversi&oacuten Hora en miles</label></dt>	
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">100 a 200 COP</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="H1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">200 a 300 COP</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="H2" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">300 a 400 COP</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="H3" class="hidden" checked />
 											    </span>	
 											    <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="success">+ 400 COP</button>
-											        <input type="checkbox" class="hidden" checked />
+											        <input type="checkbox" name="H4" class="hidden" checked />
 											    </span>	</dd>  
 											   <!--  <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="default">Default</button>
@@ -183,6 +183,7 @@
 											    <hr />
 											    <button type="submit" class="btn btn-success">Buscar</button>
 										    </dl>
+										    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 									    </form> 
 									 </div>							    	
 							    </div>

@@ -3,11 +3,11 @@
 	 <div class="row">
 	 @foreach ($girls as $list)
 	 	 @php 
-        	$imgpath = asset('../storage/app/models').'/'.$list->id.'.jpg'
+        	$imgpath = asset('../storage/app/modelss').'/'.$list->id.'.jpg'
     	 @endphp
 		  <div class="col-md-4">
 		    <div class="thumbnail">
-		      <a href="/single/lights.jpg">
+		      <a href="single/{{$list->id }}">
 		        <img src="{{ $imgpath }}" alt="Lights" style="width:100%">
 		        <div class="caption">
 		          <p>{{ $list->name }}</p>
