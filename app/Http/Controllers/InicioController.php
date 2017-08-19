@@ -46,7 +46,7 @@ class InicioController extends Controller
     		//$filterE1 = "['estat', '>=', '160']";
     		$filterE1 = "estat >= 170";
     	}
-    	//FIltro COlor de piel
+    	//Filtro Color de piel
     	if ($request->has("CP1") && $request->has("CP2") && $request->has("CP3") ){
     		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra'],['colpil', '=', 'Morena'],]";
     	}
