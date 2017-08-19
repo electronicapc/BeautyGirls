@@ -106,56 +106,81 @@
 				<div class="row">
 				     <div class="col-sm-4 col-md-12">
 							<div class="panel-group">
-								<div class="panel panel-primary">
+								<div class="panel panel-info">
 							      <div class="panel-heading">Escoge tu modelo a tu gusto</div>
-							      	<div class="panel-body">
-							      		<form action="filmod" method="post">
-								      		<dl class="dl-horizontal">
-									      		<dt><label>Estatura	</label></dt>	
+							      	<div class="panel-body">							      	
+								      	<div class="col-md-6"> 	
+								      		<form action="filmod" method="post">
+									      		<dl class="dl-horizontal">
+										      		<dt><label>Estatura	</label></dt>	
+										      		<dd><span class="button-checkbox">
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">150 cm a 160 cm</button>
+												        <input type="checkbox" name="E1" class="hidden" checked />
+												    </span>	
+												    <span class="button-checkbox">
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">160 cm a 170 cm</button>
+												        <input type="checkbox" name="E2" class="hidden" checked />
+												    </span>	
+												    <span class="button-checkbox">
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 170 cm</button>
+												        <input type="checkbox" name="E3" class="hidden" checked />
+												    </span>	</dd>
+												    <hr />
+												    <div class="form-group">
+													    <dt><label>Color piel</label></dt>
+											      		<dd><span class="button-checkbox">
+													        <button type="button" class="btn" data-color="primary">Blanca</button>
+													        <input type="checkbox" name="CP1" class="hidden" checked />
+													    </span>
+													    <span class="button-checkbox">
+													        <button type="button" class="btn" data-color="primary">Morena</button>
+													        <input type="checkbox" name="CP2" class="hidden" checked />
+													    </span>
+													    <span class="button-checkbox">
+													        <button type="button" class="btn" data-color="primary">negra</button>
+													        <input type="checkbox" name="CP3" class="hidden" checked />
+													    </span></dd>
+												    </div>		
+												</dl>  
+											</div>		    
+										<div class="col-md-6">	
+										<dl class="dl-horizontal"> 
+											<div class="form-group">   												    
+											    <dt><label>Edad</label></dt>
 									      		<dd><span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">150 cm a 160 cm</button>
-											        <input type="checkbox" name="E1" class="hidden" checked />
-											    </span>	
-											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">160 cm a 170 cm</button>
-											        <input type="checkbox" name="E2" class="hidden" checked />
-											    </span>	
-											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">+ 170 cm</button>
-											        <input type="checkbox" name="E3" class="hidden" checked />
-											    </span>	</dd>
-											    <hr />
-											    <dt><label>Color piel</label></dt>
-									      		<dd><span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">Blanca</button>
-											        <input type="checkbox" name="CP1" class="hidden" checked />
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">18 a 22 A&ntilde;os</button>
+											        <input type="checkbox" name="A1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">Morena</button>
-											        <input type="checkbox" name="CP2" class="hidden" checked />
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">22 a 26 A&ntilde;os</button>
+											        <input type="checkbox" name="A2" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">negra</button>
-											        <input type="checkbox" name="CP3" class="hidden" checked />
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">M&aacute;s de 26 A&ntilde;os</button>
+											        <input type="checkbox" name="A3" class="hidden" checked />
 											    </span></dd>
-											    <hr />	
-											    <dt><label>Inversi&oacuten Hora en miles</label></dt>	
+											   </div>
+											    <hr />
+											    <dt><label>Valor Hora en Miles</label></dt>	
+										    
 									      		<dd><span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">100 a 200 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">100 a 200 COP</button>
 											        <input type="checkbox" name="H1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">200 a 300 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">200 a 300 COP</button>
 											        <input type="checkbox" name="H2" class="hidden" checked />
 											    </span>
+
 											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">300 a 400 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">300 a 400 COP</button>
 											        <input type="checkbox" name="H3" class="hidden" checked />
 											    </span>	
 											    <span class="button-checkbox">
-											        <button type="button" class="btn" data-color="success">+ 400 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 400 COP</button>
 											        <input type="checkbox" name="H4" class="hidden" checked />
-											    </span>	</dd>  
+											    </span></dd>  
+											    
 											   <!--  <span class="button-checkbox">
 											        <button type="button" class="btn" data-color="default">Default</button>
 											        <input type="checkbox" class="hidden" checked />
@@ -180,10 +205,12 @@
 											        <button type="button" class="btn" data-color="link">Link</button>
 											        <input type="checkbox" class="hidden" checked />
 											    </span>	 -->	    
-											    <hr />
-											    <button type="submit" class="btn btn-success">Buscar</button>
-										    </dl>
-										    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+											  	
+												<br>
+											    <button type="submit" class="btn btn-primary">Buscar</button>
+										    </dl>    
+										</div>	
+									    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 									    </form> 
 									 </div>							    	
 							    </div>

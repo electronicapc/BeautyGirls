@@ -51,24 +51,48 @@ class InicioController extends Controller
     		$filterC1 = "colpil = 'Blanca' AND colpil ='Negra' AND colpil = 'Morena'";
     	}
     	elseif ($request->has("CP1") && $request->has("CP2")){
-    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra']]";
+    		$filterC1 = "colpil = 'Blanca' AND colpil = 'Negra'";
     	}
     	elseif ($request->has("CP1") && $request->has("CP3") ){
-    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Morena']";
+    		$filterC1 = "colpil = 'Blanca' AND colpil = 'Morena'";
     	}
     	elseif ($request->has("CP2") && $request->has("CP3") ){
-    		$filterC1 = "[['colpil', '=', 'Negra'],['colpil', '=', 'Morena']";
+    		$filterC1 = " colpil = 'Negra' AND colpil = 'Morena'";
     	}
     	elseif ($request->has("CP1")){
-    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra']]";
+    		$filterC1 = " colpil = 'Blanca'";
     	}
-    	elseif ($request->has("CP1") && $request->has("CP3") ){
-    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Morena']";
+    	elseif ($request->has("CP2")){
+    		$filterC1 = "colpil = 'Negra'";
     	}
-    	elseif ($request->has("CP2") && $request->has("CP3") ){
-    		$filterC1 = "[['colpil', '=', 'Negra'],['colpil', '=', 'Morena']";
+    	elseif ($request->has("CP3")){
+    		$filterC1 = "colpil = 'Morena'";
     	}
     	
+    	
+    	//Filtro Edad
+    	if ($request->has("A1") && $request->has("A2") && $request->has("A3") ){
+    		$filterA1 = "age >= 18";
+    	}
+    	elseif ($request->has("A1") && $request->has("A2")){
+    		$filterA1 = "age >= 18 AND age <= 26";
+    	}
+    	elseif ($request->has("A1") && $request->has("A3") ){
+    		$filterA1 = "age >= 18 AND age <= 22 AND age >= 26";
+    	}
+    	elseif ($request->has("A2") && $request->has("A3") ){
+    		$filterA1 = "age >= 22";
+    	}
+    	elseif ($request->has("A1")){
+    		$filterA1 = "age <= 22";
+    	}
+    	elseif ($request->has("A2")){
+    		$filterC1 = "age >= 22 AND age <=26";
+    	}
+    	elseif ($request->has("A3")){
+    		$filterC1 = "age >= 26";
+    	}
+    	 
     	//Filtro Costo
 
     	if ($request->has("H1") && $request->has("H2") && $request->has("H3") && $request->has("H4")){
