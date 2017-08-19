@@ -48,9 +48,18 @@ class InicioController extends Controller
     	}
     	//Filtro Color de piel
     	if ($request->has("CP1") && $request->has("CP2") && $request->has("CP3") ){
-    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra'],['colpil', '=', 'Morena'],]";
+    		$filterC1 = "colpil = 'Blanca' AND colpil ='Negra' AND colpil = 'Morena'";
     	}
     	elseif ($request->has("CP1") && $request->has("CP2")){
+    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra']]";
+    	}
+    	elseif ($request->has("CP1") && $request->has("CP3") ){
+    		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Morena']";
+    	}
+    	elseif ($request->has("CP2") && $request->has("CP3") ){
+    		$filterC1 = "[['colpil', '=', 'Negra'],['colpil', '=', 'Morena']";
+    	}
+    	elseif ($request->has("CP1")){
     		$filterC1 = "[['colpil', '=', 'Blanca'],['colpil', '=', 'Negra']]";
     	}
     	elseif ($request->has("CP1") && $request->has("CP3") ){
