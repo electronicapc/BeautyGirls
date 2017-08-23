@@ -10,7 +10,7 @@
 		      <a href="single/{{$list->id }}">
 		        <img src="{{ $imgpath }}" alt="Lights" style="width:100%">
 		        <div class="caption">
-		          <p>{{ $list->name }}</p>
+		          <p class="text-right">{{ $list->name }}  {{ $list->age }} A&ntildeos</p>
 		        </div>
 		      </a>
 		    </div>

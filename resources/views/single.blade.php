@@ -19,7 +19,7 @@
 			   <div class="item active">
 			      <img src="{{ $imgpath }}" alt="{{ $girls->name}}" class="img-rounded" width="704" height="236">
 			    </div>
-			 <!--    <div class="item">
+			 <!--<div class="item">
 			      <img src="chicago.jpg" alt="Chicago">
 			    </div> -->
 			
@@ -40,9 +40,16 @@
 		      <div class="panel-heading">Nuestra Modelo</div>
 		      <div class="panel-body">
 				  <ul class="list-group">
+				  	 <li class="list-group-item">Idiomas: {{ $girls->language}}</li>	
+				  	 <li class="list-group-item">Edad: {{ $girls->age}}</li>
+				  	 <li class="list-group-item">Color de Pelo: {{ $girls->colpel}}</li>
+				  	 <li class="list-group-item">Color de Ojos: {{ $girls->colojo}}</li>
+				  	 <li class="list-group-item">Color de Piel: {{ $girls->colpil}}</li>
+				  	 <li class="list-group-item">Estatura: {{ $girls->estat}}</li>
 				  @foreach ($lists as $item)
-					  <li class="list-group-item">{{ $item->descripcion }}</li>
-				  @endforeach					   
+					 <li class="list-group-item">{{ $item->descripcion }}</li>
+				  @endforeach	
+				  	  				   
 				 </ul>
 			 </div> 
 		</div> 

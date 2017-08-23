@@ -14,9 +14,17 @@
 //Rutas para publicar productos
 Route::get('/','InicioController@index');
 Route::get('/single/{id}','InicioController@single')->where(['id' => '[0-9]+']);
-
 Route::post('filmod','InicioController@filter');
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
+//Rutas autenticadas
+Route::group(['middleware' =>'auth'], function () {
+	Route::match(['get', 'post'],'/admin', function () {
+		return view('administrar');
+	});
 
-Route::get('/home', 'HomeController@index');
+	Route::post('/inscribir', 'CheckoutController@registrar');
+
+});
+	//Fin rutas
