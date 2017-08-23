@@ -212,7 +212,7 @@ class InicioController extends Controller
     	return view('galeria')->with('girls', $girls);
     }
     
-    public function single($id)
+    public function inscribirse(Request $request)
     {
 
     	$girls		= Girl::where('id', $id)->get()->first();
@@ -221,6 +221,19 @@ class InicioController extends Controller
     	->where('servshows.idGirl', '=', $id)
     	->get();
     	
+    	return view('single')->with('lists', $lists)->with('girls', $girls);
+    }
+    
+    
+    public function single($id)
+    {
+    
+    	$girls		= Girl::where('id', $id)->get()->first();
+    	$lists		= DB::table('services')
+    	->join('servshows', 'services.id', '=', 'servshows.idService')
+    	->where('servshows.idGirl', '=', $id)
+    	->get();
+    	 
     	return view('single')->with('lists', $lists)->with('girls', $girls);
     }
 }
