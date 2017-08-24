@@ -4,7 +4,9 @@
 	 	<div class="col-xs-12 col-md-12">
 			<form class="form-horizontal" action="inscribirse">
 				<fieldset>
-				
+				@if($errors->any())
+					<h4>{{$errors->first()}}</h4>
+				@endif
 				<!-- Form Name -->
 				<legend>Formulario de Registro de Modelos</legend>
 				
@@ -23,7 +25,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Edad">Edad</label>  
 				  <div class="col-md-4">
-				  <input id="age" name="age" type="number" placeholder="Edad" class="form-control input-md" required="">
+				  <input id="age" name="	" type="number" placeholder="Edad" class="form-control input-md" required="">
 				  <span class="help-block">Introduzca su Edad real</span>  
 				  </div>
 				</div>
@@ -106,19 +108,37 @@
 				  </div>
 				</div>
 				
-				<!-- Select Basic -->
+				<!-- Multiple Checkboxes -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Idiomas">Idiomas</label>
+				  <label class="col-md-4 control-label" for="language">Idiomas</label>
 				  <div class="col-md-4">
-				    <select id="Idiomas" name="Idiomas" class="form-control" required="">
-				      <option value="1">Espa&ntildeol</option>
-				      <option value="2">Ingl&eacutes</option>
-				      <option value="3">Alem&aacuten</option>
-				      <option value="4">Franc&eacutes</option>
-				    </select>
+				  <div class="checkbox">
+				    <label for="language-0">
+				      <input type="checkbox" name="language" id="language-0" value="1">
+				      Español
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="language-1">
+				      <input type="checkbox" name="language" id="language-1" value="2">
+				      Inglés
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="language-2">
+				      <input type="checkbox" name="language" id="language-2" value="3">
+				      Alemán
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="language-3">
+				      <input type="checkbox" name="language" id="language-3" value="4">
+				      Francés
+				    </label>
+					</div>
 				  </div>
 				</div>
-				
+								
 				<!-- File Button --> 
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.1">Foto No.1</label>

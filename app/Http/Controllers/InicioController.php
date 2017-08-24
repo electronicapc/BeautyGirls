@@ -215,11 +215,49 @@ class InicioController extends Controller
     public function inscribirse(Request $request)
     {
 
-    	$girls		= Girl::where('id', $id)->get()->first();
-    	$lists		= DB::table('services')
-    	->join('servshows', 'services.id', '=', 'servshows.idService')
-    	->where('servshows.idGirl', '=', $id)
-    	->get();
+		$name		= $request->input('name');
+		$age		= $request->input('age');
+		$colojo		= $request->input('colojo');
+		$colpel		= $request->input('colpel');
+		$colpil		= $request->input('colpil');
+		$tambus		= $request->input('tambus');
+		$tamcol		= $request->input('tamcol');
+		$tamcin		= $request->input('tamcin');
+		$estat		= $request->input('estat');
+		$confis 	= $request->input('confis');
+		$language	= $request->input('language');
+	
+		
+		if ($request->hasFile('foto1') && $request->hasFile('foto2') && $request->hasFile('foto3') && $request->hasFile('foto4'))
+		{
+			if ($request->file('foto1')->isValid() && $request->file('foto2')->isValid() && $request->file('foto3')->isValid() && $request->file('foto4')->isValid())
+			{
+				$idprd = new girl;
+				$idprd->name 			= $request->input('nombre');
+				$idprd->categoria 		= $request->input('categoria');
+				$idprd->precpu 			= $request->input('ppublico');
+				$idprd->costo 			= $request->input('costo');
+				$idprd->ReferenciaOEM 	= $request->input('referencia');
+				$idprd->iva 			= $request->input('iva');
+				$idprd->ivap 			= $request->input('piva');
+				$idprd->activo 			= $request->input('activo');
+				$idprd->destacado 		= $request->input('destacado');
+				$idprd->cantidadex 		= $request->input('cexist');
+				$idprd->Descripcion		= $request->input('descripcion');
+				$idprd->foto		= '../storage/app/PrdImages/';
+				$idprd->save();
+				
+			}
+			else 
+			{
+				return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
+			}
+		}
+		else 
+		{
+			return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
+		}
+		
     	
     	return view('single')->with('lists', $lists)->with('girls', $girls);
     }
