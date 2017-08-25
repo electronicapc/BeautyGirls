@@ -212,12 +212,13 @@ class InicioController extends Controller
     	return view('galeria')->with('girls', $girls);
     }
     
-    public function inscribirse(Request $request)
+    public function inscribir(Request $request)
     {
 
 		$name		= $request->input('name');
 		$age		= $request->input('age');
 		$colojo		= $request->input('colojo');
+		$city		= $request->input('city');
 		$colpel		= $request->input('colpel');
 		$colpil		= $request->input('colpil');
 		$tambus		= $request->input('tambus');

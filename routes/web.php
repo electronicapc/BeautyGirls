@@ -27,7 +27,7 @@ Route::group(['middleware' =>'auth'], function () {
 	Route::match(['get', 'post'],'/inscribir', function () {
 		return view('inscribir');
 	});
-	Route::post('/inscribirse', 'CheckoutController@inscribir');
+	Route::post('/inscribir', 'InicioController@inscribir');
 
 });
 	//Fin rutas

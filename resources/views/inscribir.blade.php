@@ -12,7 +12,7 @@
 				
 							
 				<!-- Text input-->
-				<div class="form-group">
+				<div class="form-group">	
 				  <label class="col-md-4 control-label" for="Nombre">Nombre</label>  
 				  <div class="col-md-4">
 				  <input id="name" name="name" type="text" placeholder="Nombre" class="form-control input-md" required="">
@@ -27,6 +27,19 @@
 				  <div class="col-md-4">
 				  <input id="age" name="	" type="number" placeholder="Edad" class="form-control input-md" required="">
 				  <span class="help-block">Introduzca su Edad real</span>  
+				  </div>
+				</div>
+				<!-- Select Basic -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="selectbasic">Contextura fisica</label>
+				  <div class="col-md-4">
+				    <select id="city" name="city" class="form-control" required="">
+				      <option value="1">Bogot&aacute;</option>
+				      <option value="2">Medell&iacute;n</option>
+				      <option value="3">Cali</option>
+				      <option value="4">Barranquilla</option>
+				      <option value="5">Cartagena</option>
+				    </select>
 				  </div>
 				</div>
 				
@@ -115,25 +128,25 @@
 				  <div class="checkbox">
 				    <label for="language-0">
 				      <input type="checkbox" name="language" id="language-0" value="1">
-				      Español
+				      Espa&ntilde;ol
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-1">
 				      <input type="checkbox" name="language" id="language-1" value="2">
-				      Inglés
+				      Ingl&eacute;s
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-2">
 				      <input type="checkbox" name="language" id="language-2" value="3">
-				      Alemán
+				      Alem&aacute;n
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-3">
 				      <input type="checkbox" name="language" id="language-3" value="4">
-				      Francés
+				      Franc&eacute;s
 				    </label>
 					</div>
 				  </div>
