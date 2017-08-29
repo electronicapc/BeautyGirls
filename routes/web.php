@@ -21,13 +21,18 @@ Auth::routes();
 //Rutas autenticadas
 Route::group(['middleware' =>'auth'], function () {
 	Route::match(['get', 'post'],'/admin', function () {
-		return view('administrar');
+		return view('admin');
 	});
 
 	Route::match(['get', 'post'],'/inscribir', function () {
 		return view('inscribir');
 	});
-	Route::post('/inscribir', 'InicioController@inscribir');
+	Route::post('/inscribirse', 'InicioController@inscribir');
+	
+	Route::get('/admin/addmmodel', 'AdminController@addmodel');
+	Route::get('/admin/edtmodel', 'AdminController@edtmodel');
+	Route::get('/admin/user', 'AdminController@user');
+	Route::get('/admin/ventas', 'AdminController@ventas');
 
 });
 	//Fin rutas

@@ -2,7 +2,12 @@
   <div class="container">
 	 <div class="row">
 	 	<div class="col-xs-12 col-md-12">
-			<form class="form-horizontal" action="inscribirse">
+	 	@if (session('status'))
+		<div class="alert alert-success">
+		  <strong>Exito!</strong> {{ session('status') }}
+		</div>
+		@endif
+			<form class="form-horizontal" method="POST" action="inscribirse" accept-charset="UTF-8" enctype="multipart/form-data">
 				<fieldset>
 				@if($errors->any())
 					<h4>{{$errors->first()}}</h4>
@@ -10,6 +15,7 @@
 				<!-- Form Name -->
 				<legend>Formulario de Registro de Modelos</legend>
 				
+				<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 							
 				<!-- Text input-->
 				<div class="form-group">	
@@ -25,20 +31,20 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Edad">Edad</label>  
 				  <div class="col-md-4">
-				  <input id="age" name="	" type="number" placeholder="Edad" class="form-control input-md" required="">
+				  <input id="age" name="age" type="number" placeholder="Edad" class="form-control input-md" required="">
 				  <span class="help-block">Introduzca su Edad real</span>  
 				  </div>
 				</div>
 				<!-- Select Basic -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="selectbasic">Contextura fisica</label>
+				  <label class="col-md-4 control-label" for="selectbasic">Ciudad de los servicios</label>
 				  <div class="col-md-4">
 				    <select id="city" name="city" class="form-control" required="">
-				      <option value="1">Bogot&aacute;</option>
-				      <option value="2">Medell&iacute;n</option>
-				      <option value="3">Cali</option>
-				      <option value="4">Barranquilla</option>
-				      <option value="5">Cartagena</option>
+				      <option value="Bogota">Bogot&aacute;</option>
+				      <option value="Medellin">Medell&iacute;n</option>
+				      <option value="Cali">Cali</option>
+				      <option value="Barranquilla">Barranquilla</option>
+				      <option value="Cartagena">Cartagena</option>
 				    </select>
 				  </div>
 				</div>
@@ -109,14 +115,49 @@
 				  </div>
 				</div>
 				
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Costos 1 Hora</label>  
+				  <div class="col-md-4">
+				  <input id="estat" name="v_one_h" type="number" placeholder="Valor hora" class="form-control input-md" required="">
+				  <span class="help-block">Introduzca el valor de una hora de servicio</span>  
+				  </div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Costos 2 Hora</label>  
+				  <div class="col-md-4">
+				  <input id="estat" name="v_two_h" type="number" placeholder="Valor 2 horas" class="form-control input-md" required="">
+				  <span class="help-block">Introduzca el valor de dos horas de servicio</span>  
+				  </div>
+				</div>
+				
+					<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Costos 3 Horas</label>  
+				  <div class="col-md-4">
+				  <input id="estat" name="v_three_h" type="number" placeholder="Valor 3 horas" class="form-control input-md" required="">
+				  <span class="help-block">Introduzca el valor de tres horas de servicio</span>  
+				  </div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Costos fin de semana</label>  
+				  <div class="col-md-4">
+				  <input id="estat" name="v_fds" type="number" placeholder="Valor fin de semana" class="form-control input-md" required="">
+				  <span class="help-block">Introduzca el valor de un fin de semana de servicio</span>  
+				  </div>
+				</div>
+				
+				
 				<!-- Select Basic -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="selectbasic">Contextura fisica</label>
 				  <div class="col-md-4">
 				    <select id="confis" name="confis" class="form-control" required="">
-				      <option value="1">Delgada</option>
-				      <option value="2">Normal</option>
-				      <option value="2">Obesa</option>
+				      <option value="Delgada">Delgada</option>
+				      <option value="Normal">Normal</option>
+				      <option value="Obesa">Obesa</option>
 				    </select>
 				  </div>
 				</div>
@@ -127,36 +168,45 @@
 				  <div class="col-md-4">
 				  <div class="checkbox">
 				    <label for="language-0">
-				      <input type="checkbox" name="language" id="language-0" value="1">
+				      <input type="checkbox" name="language1" id="language-0" value="Espanol">
 				      Espa&ntilde;ol
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-1">
-				      <input type="checkbox" name="language" id="language-1" value="2">
+				      <input type="checkbox" name="language2" id="language-1" value="Ingles">
 				      Ingl&eacute;s
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-2">
-				      <input type="checkbox" name="language" id="language-2" value="3">
+				      <input type="checkbox" name="language3" id="language-2" value="Aleman">
 				      Alem&aacute;n
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="language-3">
-				      <input type="checkbox" name="language" id="language-3" value="4">
+				      <input type="checkbox" name="language4" id="language-3" value="Frances">
 				      Franc&eacute;s
 				    </label>
 					</div>
 				  </div>
 				</div>
 								
+				
+				<!-- Textarea -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Intereses">Intereses</label>
+				  <div class="col-md-4">                     
+				    <textarea class="form-control" id="intereses" name="intereses" placeholder="Cuentanos algo de ti..." required=""></textarea>
+				  </div>
+				</div>
+				
 				<!-- File Button --> 
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.1">Foto No.1</label>
 				  <div class="col-md-4">
-				    <input id="Foto1" name="Foto1" class="input-file" type="file" required="">
+				    <input id="foto1" name="foto1" class="input-file" type="file" required="">
 				  </div>
 				</div>
 				
@@ -164,7 +214,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.2">Foto No.2</label>
 				  <div class="col-md-4">
-				    <input id="Foto2" name="Foto2" class="input-file" type="file" required="">
+				    <input id="foto2" name="foto2" class="input-file" type="file" required="">
 				  </div>
 				</div>
 				
@@ -172,7 +222,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.3">Foto No.3</label>
 				  <div class="col-md-4">
-				    <input id="Foto3" name="Foto3" class="input-file" type="file" required="">
+				    <input id="foto3" name="foto3" class="input-file" type="file" required="">
 				  </div>
 				</div>
 				
@@ -180,7 +230,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
 				  <div class="col-md-4">
-				    <input id="Foto4" name="Foto4" class="input-file" type="file" required="">
+				    <input id="foto4" name="foto4" class="input-file" type="file" required="">
 				  </div>
 				</div>
 				
