@@ -20,10 +20,6 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 //Rutas autenticadas
 Route::group(['middleware' =>'auth'], function () {
-	Route::match(['get', 'post'],'/admin', function () {
-		return view('admin');
-	});
-
 	Route::match(['get', 'post'],'/inscribir', function () {
 		return view('inscribir');
 	});
@@ -35,4 +31,14 @@ Route::group(['middleware' =>'auth'], function () {
 	Route::get('/admin/ventas', 'AdminController@ventas');
 
 });
+
+
+//Rutas administrativas
+	//Rutas administrativas
+	Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+	{		
+		Route::match(['get', 'post'],'/admin', function () {
+			return view('admin');
+		});
+	});
 	//Fin rutas
