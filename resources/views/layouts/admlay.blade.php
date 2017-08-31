@@ -262,10 +262,10 @@
                             <a href="#"><i class="glyphicon glyphicon-film"></i>Modelos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('admin/addmmodel')}}">Agregar Modelos</a>
+                                    <a href="{{URL::to('/admin/modelos/add')}}">Agregar Modelos</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('admin/edtmodel')}}">Editar Modelos</a>
+                                    <a href="{{URL::to('/admin/addmodel')}}">Editar Modelos</a>
                                 </li>
 							<!-- 	<li>
                                     <a href="{{URL::to('admin/prodmasivo')}}">Masivo Productos</a>

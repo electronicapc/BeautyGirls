@@ -25,20 +25,27 @@ Route::group(['middleware' =>'auth'], function () {
 	});
 	Route::post('/inscribirse', 'InicioController@inscribir');
 	
-	Route::get('/admin/addmmodel', 'AdminController@addmodel');
-	Route::get('/admin/edtmodel', 'AdminController@edtmodel');
-	Route::get('/admin/user', 'AdminController@user');
-	Route::get('/admin/ventas', 'AdminController@ventas');
+	//Rutas administrativas
+	Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+	{
+		Route::match(['get', 'post'],'/admin', function () {
+			return view('admin');
+		});
+		Route::get('/admin/addmodel', 'AdminController@addmodel');
+		Route::get('/admin/edtmodel', 'AdminController@edtmodel');
+		Route::get('/admin/user', 'AdminController@user');
+		Route::get('/admin/ventas', 'AdminController@ventas');
+		//Anadir modelos
+		Route::get('/admin/modelos/add', function () {
+			return view('admod');
+		});
+		Route::post('/admin/modelos/add', 'AdminController@addmods');
+		Route::get('/admin/modelos/{id}', 'AdminController@edtmods')->where(['id' => '[0-9]+']);
+		Route::post('/admin/modelos/edicion', 'AdminController@edtmosv');
+	});
 
 });
 
 
-//Rutas administrativas
-	//Rutas administrativas
-	Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
-	{		
-		Route::match(['get', 'post'],'/admin', function () {
-			return view('admin');
-		});
-	});
+
 	//Fin rutas
