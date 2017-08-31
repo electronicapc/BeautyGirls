@@ -28,7 +28,7 @@
 		<div class="col-lg-12">
 			   <div class="panel panel-default">
                         <div class="panel-heading">
-                            Categorias
+                            Usuarios
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -36,8 +36,6 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Tel&eacute;fono</th>
-                                        <th>Direcci&oacute;n</th>
                                         <th>Email</th>
                                         <th>Administrador?</th>
                                         <th>Editar permiso Admin</th>
@@ -51,8 +49,6 @@
                                 	@if(($parity % 2) == 0)
 	                                    <tr class="odd gradeA">
 	                                        <td>{{ $list->name }}</td>
-	                                        <td>{{ $list->phonen }}</td>
-	                                        <td>{{ $list->address }}</td>
 	                                        <td>{{ $list->email }}</td>
 	                                        <td>{{ $list->isAdmin }}</td>
 	                                        <td class="center"><a href="user/{{$list->id}}/{{ $list->isAdmin }}"><button type="button" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-edit"></span></button><a></a></td>
@@ -60,8 +56,6 @@
 	                                @else    
 	                                    <tr class="even gradeA">
 	                                        <td>{{ $list->name }}</td>
-	                                        <td>{{ $list->phonen }}</td>
-	                                        <td>{{ $list->address }}</td>
 	                                        <td>{{ $list->email }}</td>
 	                                        <td>{{ $list->isAdmin }}</td>
 	                                        <td class="center"><a href="user/{{$list->id}}/{{ $list->isAdmin }}"><button type="button" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-edit"></span></button><a></a></td>

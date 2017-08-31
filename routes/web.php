@@ -42,6 +42,11 @@ Route::group(['middleware' =>'auth'], function () {
 		Route::post('/admin/modelos/add', 'AdminController@addmods');
 		Route::get('/admin/modelos/{id}', 'AdminController@edtmods')->where(['id' => '[0-9]+']);
 		Route::post('/admin/modelos/edicion', 'AdminController@edtmosv');
+		
+		//Usuarois
+		Route::get('/admin/user/{id}/{isAdmin}', 'AdminController@addmin')->where(['id' => '[0-9]+']);
+		
+		//Ventas o pagos
 	});
 
 });

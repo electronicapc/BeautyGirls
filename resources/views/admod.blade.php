@@ -89,9 +89,10 @@
 				  <label class="col-md-4 control-label" for="selectbasic">Color de Piel</label>
 				  <div class="col-md-4">
 				    <select id="colpil" name="colpil" class="form-control" required="">
-				      <option value="1">Blanca</option>
-				      <option value="2">Morena</option>
-				      <option value="2">Negra</option>
+				    	<option value="" selected="selected"></option>
+						<option value="Blanca">Blanca</option>
+						<option value="Morena">Morena</option>
+						<option value="Negra">Negra</option>
 				    </select>
 				  </div>
 				</div>

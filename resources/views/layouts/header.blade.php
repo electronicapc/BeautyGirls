@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Softecol -Admin</title>
+<title>Beauty Girls - Modelos</title>
 <!--Librerias bootstrap y Jquery-->	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
