@@ -306,4 +306,59 @@ class InicioController extends Controller
     	 
     	return view('single')->with('lists', $lists)->with('girls', $girls);
     }
+    
+    public function contacto(Request $request)
+    {
+    	$name		= $request->input('Nombre');
+    	$motivo		= $request->input('Motivo');
+    	$telefono	= $request->input('telefono');
+    	$correo		= $request->input('Correo');
+    	$mensaje	= $request->input('Mensaje');
+    	
+    	//Email
+    	$to = "gunsnjrc@yahoo.com, gunsnjrc_999@hotmail.com";
+    	$subject = "Cuestionario pagina BeautyGirls";
+    	
+    	$message = "
+		<html>
+		<head>
+		<title>Beauty Girls</title>
+		</head>
+		<body>
+		<p>NUevo contacto pagina Web</p>
+		<table>
+		<tr>
+		<th>Nombre:</th>
+		<th>Motivo:</th>
+    	<th>telefono:</th>
+		<th>Mensaje:</th>
+    	<th>Correo:</th>
+		</tr>
+		<tr>
+		<td>$name</td>
+		<td>$motivo	</td>
+    	<td>$telefono</td>
+		<td>$mensaje</td>
+    	<td>$correo</td>	
+		</tr>
+		</table>
+		</body>
+		</html>
+		";
+		    	
+    	// Always set content-type when sending HTML email
+    	$headers = "MIME-Version: 1.0" . "\r\n";
+    	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    	
+    	// More headers
+    	$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
+    	$headers .= 'Cc: gunsnjrc@gamil.com' . "\r\n";
+    	
+    	//mail($to,$subject,$message,$headers);
+    	
+		//FIn email
+    	return redirect('/contacto')->with('status', 'Su solicitud fue recibida, pronto nos comunicaremos con usted');
+    	
+    }
+    
 }

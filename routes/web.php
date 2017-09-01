@@ -16,6 +16,10 @@ Route::get('/','InicioController@index');
 Route::get('/single/{id}','InicioController@single')->where(['id' => '[0-9]+']);
 Route::post('filmod','InicioController@filter');
 Route::get('/home', 'HomeController@index');
+Route::get('/contacto', function () {
+	return view('contact');
+});
+Route::post('contacto','InicioController@contacto');
 
 Auth::routes();
 //Rutas autenticadas

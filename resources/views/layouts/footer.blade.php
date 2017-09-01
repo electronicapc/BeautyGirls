@@ -3,7 +3,7 @@
 				<div class="row">
 				<div class="col-sm-12">
 				<div class="about">
-					<img src="images/logo.png" class="img-responsive center-block" alt="">
+					<img src="images/fondo.png" width="50" height="70" class="img-responsive center-block" alt="">
 					<p>Representaci&oacute;n de modelos asociadas.</p>
 				
 					<div class="social-media">

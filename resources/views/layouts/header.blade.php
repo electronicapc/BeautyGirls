@@ -4,8 +4,6 @@
 <!--Librerias bootstrap y Jquery-->	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
 <link rel="stylesheet" href="{{  asset('css/bootstrap.min.css') }}"  crossorigin="anonymous">
 <link rel="stylesheet" href="{{  asset('css/bootstrap.min.css') }}"  crossorigin="anonymous">
 <link rel="stylesheet" href="{{  asset('css/bootstrap-theme.min.css') }}"  crossorigin="anonymous">
@@ -57,7 +55,7 @@
 </style>
 </head>
 	<body>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
@@ -67,7 +65,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">BeautyLies</a>
+		      <a class="navbar-brand" href="" style="color: #fAfAfA; font: oblique 120% cursive;">BeautyLies</a>
 		    </div>
 		
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,7 +92,7 @@
 		      </form> -->
 				<ul class="nav navbar-nav navbar-right">
 					<button data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn">Filtrar Modelos</button>
-			        <li><a href="#">Contactenos</a></li>
+			        <li><a href="contacto" style="color: #fAfAfA; font: oblique 120% cursive;">Contactenos</a></li>
 			        <li class="dropdown">			    				
 		        </li>
 		      </ul>    
