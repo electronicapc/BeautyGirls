@@ -207,7 +207,7 @@ class InicioController extends Controller
     	//echo $filterE1;
     	//dd($request);
     	//$girls		= Girl::select(DB::raw('activo = 'SI' AND $filterE1'))->select('id','name')->get();
-    	$girls		= DB::select(DB::raw("SELECT id, name FROM girls WHERE activo = 'SI' AND $filterE1"));
+    	$girls		= DB::select(DB::raw("SELECT id, name, age FROM girls WHERE activo = 'SI' AND $filterE1"));
     	//dd($girls);
     	return view('galeria')->with('girls', $girls);
     }
