@@ -354,7 +354,7 @@ class InicioController extends Controller
     	$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
     	$headers .= 'Cc: gunsnjrc@gamil.com' . "\r\n";
     	
-    	//mail($to,$subject,$message,$headers);
+    	mail($to,$subject,$message,$headers);
     	
 		//FIn email
     	return redirect('/contacto')->with('status', 'Su solicitud fue recibida, pronto nos comunicaremos con usted');

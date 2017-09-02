@@ -64,7 +64,7 @@
 				<div class="container">
 				<div class="row">
 				<div class="col-sm-6">
-				<p>Copyright © 2017. Beauty Girls.</p>
+				<p>Copyright &#64; 2017. Beauty Girls.</p>
 				</div>
 				<div class="col-sm-6"></div>
 				</div>
