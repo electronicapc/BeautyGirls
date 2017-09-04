@@ -9,19 +9,29 @@
 			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			    <li data-target="#myCarousel" data-slide-to="1"></li>
 			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			    <li data-target="#myCarousel" data-slide-to="3"></li>
 			  
 			  </ol>
 			  @php 
-                 $imgpath = asset('../storage/app/models').'/'.$girls->id.'.jpg'
+                 $imgpath  = asset('../storage/app/models').'/'.$girls->id.'.jpg';
+                 $imgpath1 = asset('../storage/app/models').'/'.$girls->id.'_1.jpg';
+                 $imgpath2 = asset('../storage/app/models').'/'.$girls->id.'_2.jpg';
+                 $imgpath3 = asset('../storage/app/models').'/'.$girls->id.'_3.jpg'
               @endphp
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 			   <div class="item active">
 			      <img src="{{ $imgpath }}" alt="{{ $girls->name}}" class="img-rounded" width="704" height="236">
 			    </div>
-			 <!--<div class="item">
-			      <img src="chicago.jpg" alt="Chicago">
-			    </div> -->
+			   <div class="item">
+			      <img src="{{ $imgpath1 }}" alt="{{ $imgpath1 }}" class="img-rounded" width="704" height="236">
+			   </div>
+			   <div class="item">
+			      <img src="{{ $imgpath2 }}" alt="{{ $imgpath2 }}" class="img-rounded" width="704" height="236">
+			   </div>
+			   <div class="item">
+			      <img src="{{ $imgpath3 }}" alt="{{ $imgpath3 }}" class="img-rounded" width="704" height="236">
+			   </div>
 			
 			  <!-- Left and right controls -->
 			  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
