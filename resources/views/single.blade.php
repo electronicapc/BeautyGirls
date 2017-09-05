@@ -70,11 +70,11 @@
 			<div class="panel panel-default" style="color: #2E2E2E; font: oblique 130% cursive;" id="elpanel">
 			      <div class="panel-heading"><strong>Nuestra Modelo</strong></div>
 			      <div class="panel-body">
-					  <ul class="list-group">
+					  <ul class="list-group" id="caract">
 					  	 <li class="list-group-item">  
 					  	 	<dl>
 							    <dt>Nombre:</dt>
-							    <dd><p>&#8212;           {{ $girls->name}}</p></dd>
+							    <dd><p>&#8212; {{ $girls->name}}</p></dd>
 							    <dt>Idiomas:</dt>
 							    @php
 							    	$patronFin 	= "/\/$/";
@@ -83,17 +83,48 @@
 							    <dd><p>&#8212; {{ $cadena}}</p></dd>
 							</dl>
 						 </li>
-					  	 <li class="list-group-item">Edad: {{ $girls->age}}</li>
-					  	 <li class="list-group-item">Color de Pelo: {{ $girls->colpel}}</li>
-					  	 <li class="list-group-item">Color de Ojos: {{ $girls->colojo}}</li>
-					  	 <li class="list-group-item">Color de Piel: {{ $girls->colpil}}</li>
-					  	 <li class="list-group-item">Estatura: {{ $girls->estat}}</li>
-					  	 <li class="list-group-item">Tama&ntilde;o de cintura: {{ $girls->tamcin}}</li>
-					  	 <li class="list-group-item">Tama&ntilde;o de cola: {{ $girls->tamcol}}</li>
-					  	 <li class="list-group-item">Ciudad: {{ $girls->city}}</li>
-					  	 <li class="list-group-item">Contextura fisica: {{ $girls->confis}}</li>
-					  	 <li class="list-group-item">Tama&ntilde;o de busto: {{ $girls->tambus}}</li>
-					  	 <li class="list-group-item">Afinidades: {{ $girls->interest}}</li>				  	  				   
+					  	 <li class="list-group-item">
+					  	 	<dl>
+							    <dt>Edad:</dt>
+							    <dd><p>&#8212; {{ $girls->age}}</p></dd>
+							    <dt>Color de Pelo:</dt>
+							    <dd><p>&#8212; {{ $girls->colpel}}</p></dd>
+							</dl>
+						 </li>
+					  	 <li class="list-group-item">  	 
+					  		<dl>
+							    <dt>Color de Ojos:</dt>
+							    <dd><p>&#8212; {{ $girls->colojo}}</p></dd>
+							    <dt>Color de Piel:</dt>
+							    <dd><p>&#8212; {{ $girls->colpil}}</p></dd>
+							    <dt>Estatura:</dt>
+							    <dd><p>&#8212; {{ $girls->estat}}</p></dd>
+							</dl>
+					  	 </li>
+					  	 <li class="list-group-item">  	 
+					  		<dl>
+							    <dt>Tama&ntilde;o de cintura:</dt>
+							    <dd><p>&#8212; {{ $girls->tamcin}}</p></dd>
+							</dl>
+					  	 </li>
+					  	 <li class="list-group-item">  	 
+					  		<dl>
+							    <dt>Tama&ntilde;o de cola:</dt>
+							    <dd><p>&#8212; {{ $girls->tamcol}}</p></dd>
+							    <dt>Ciudad:</dt>
+							    <dd><p>&#8212; {{ $girls->city}}</p></dd>
+							</dl>
+					  	 </li>
+					  	 <li class="list-group-item">  	 
+					  		<dl>
+							    <dt>Contextura fisica:</dt>
+							    <dd><p>&#8212; {{ $girls->confis}}</p></dd>
+							    <dt>Tama&ntilde;o de busto:</dt>
+							    <dd><p>&#8212; {{ $girls->tambus}}</p></dd>
+							    <dt>Afinidades:</dt>
+							    <dd><p>&#8212; {{ $girls->interest}}</p></dd>
+							</dl>
+					  	 </li>  	  				   
 					 </ul>
 				 </div> 
 			</div> 

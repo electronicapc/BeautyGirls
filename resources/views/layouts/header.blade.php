@@ -14,8 +14,12 @@
 
 <!-- Custom CSS -->
 <link href="{{  asset('css/sb-admin-2.css') }}" rel="stylesheet">
-
-
+<!--
+<script>
+function myFunction() {
+    document.getElementById("myForm").reset();
+}
+</script>-->
 
 <!-- Fin Librerias bootstrap y Jquery-->	
 <style>
@@ -88,10 +92,13 @@
 		}
 	}
 	
-	/*#elpanel{
-		width: 50%;
-	}*/
-
+	@media (min-width: 768px){  
+		#caract {
+		  columns: 2;
+		  -webkit-columns: 2;
+		  -moz-columns: 2;
+		}	  
+	}
 </style>
 </head>
 	<body>
@@ -105,7 +112,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="" style="color: #fAfAfA; font: oblique 120% cursive;">BeautyLies</a>
+		      <a class="navbar-brand" href="{{  url('/') }}" style="color: #fAfAfA; font: oblique 120% cursive;">BeautyLies</a>
 		    </div>
 		
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -149,7 +156,7 @@
 							      <div class="panel-heading"><font color="white">Escoge tu modelo a tu gusto</font></div>
 							      	<div class="panel-body">							      	
 								      	<div class="col-md-3"> 	
-								      		<form action="filmod" method="post">
+								      		<form action="filmod" method="post" id="myForm">
 									      		<dl class="dl-horizontal">
 										      		<dt><label>Estatura	en cm</label></dt>	
 										      		<dd><span class="button-checkbox">
@@ -247,6 +254,8 @@
 											  	
 												<br>
 											    <button type="submit" class="btn btn-primary">Buscar</button>
+											   <!--  <button type="reset" class="btn btn-warning" onclick="myFunction()">Limpiar filtro</button> -->
+											    <button type="reset" data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn">Cerrar Filtro</button>
 										    </dl>    
 										</div>	
 									    <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -258,4 +267,3 @@
 					 </div>  
 				</div>	 	    
 		</div>
-	
