@@ -1,7 +1,7 @@
  @includeIf('layouts.header')  
  <div class="container-fluid">
 	 <div class="row">
-		 	<div class="col-xs-12 col-md-6">
+		 	<div class="col-xs-12 col-md-7">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				  <!-- Indicators -->
 				  <ol class="carousel-indicators">	
@@ -42,14 +42,47 @@
 					  </a>
 				</div> 
 			</div> 
+			<br>
+			<div class="col-xs-12 col-md-6" id="costos">		
+				<div>
+			 	    <div class="panel panel-primary"	>
+				      <div class="panel-heading"><strong>Costos de compa&ntilde;&iacute;a</strong></div>
+				      	<div class="panel-body">
+				      		<ul class="list-group">
+					  			<li class="list-group-item"><strong>Una hora: </strong>{{ $girls->v_one_h}}</li>
+					  			<li class="list-group-item"><strong>Dos horas: </strong>{{ $girls->v_two_h}}</li>
+					  			<li class="list-group-item"><strong>Tres horas: </strong>{{ $girls->v_three_h}}</li>
+					  			<li class="list-group-item"><strong>Fin de Semana: </strong>{{ $girls->v_fds}}</li>
+					  		</ul>	
+				      	
+						</div>
+				    </div>		
+				</div> 
+				<div>
+					<!--     <a href="categorias/add"><button type="submit" class="btn btn-success btn-lg pull-left">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</a>  -->
+				</div>
+			</div>
 		</div>	
-		<div class="col-xs-12 col-md-6 col-lg-6">
-			<div class="panel panel-default" style="color: #2E2E2E; font: oblique 130% cursive;">
+		<div class="col-xs-12 col-md-5 col-lg-5">
+			<div class="panel panel-default" style="color: #2E2E2E; font: oblique 130% cursive;" id="elpanel">
 			      <div class="panel-heading"><strong>Nuestra Modelo</strong></div>
 			      <div class="panel-body">
 					  <ul class="list-group">
-					  	<li class="list-group-item">Nombre: {{ $girls->name}}</li>
-					  	 <li class="list-group-item">Idiomas: {{ $girls->language}}</li>	
+					  	 <li class="list-group-item">  
+					  	 	<dl>
+							    <dt>Nombre:</dt>
+							    <dd><p>&#8212;           {{ $girls->name}}</p></dd>
+							    <dt>Idiomas:</dt>
+							    @php
+							    	$patronFin 	= "/\/$/";
+							    	$cadena 	= preg_replace( $patronFin, "", $girls->language );
+							    @endphp
+							    <dd><p>&#8212; {{ $cadena}}</p></dd>
+							</dl>
+						 </li>
 					  	 <li class="list-group-item">Edad: {{ $girls->age}}</li>
 					  	 <li class="list-group-item">Color de Pelo: {{ $girls->colpel}}</li>
 					  	 <li class="list-group-item">Color de Ojos: {{ $girls->colojo}}</li>
@@ -67,7 +100,7 @@
 		</div>
 	</div>
 </div>
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		 	<div class="col-xs-12 col-md-6">
 		 	    <div class="panel panel-primary"	>
@@ -76,12 +109,12 @@
 			    </div>		
 			</div> 
 			<div>
-				<!--     <a href="categorias/add"><button type="submit" class="btn btn-success btn-lg pull-left">
+				     <a href="categorias/add"><button type="submit" class="btn btn-success btn-lg pull-left">
 							<span class="glyphicon glyphicon-plus"></span>
 						</button>
-					</a>  -->
+					</a>  
 			</div>
 	 </div>
- </div>
+ </div> -->
 <div style="margin-top : 50px"></div> 
  @includeIf('layouts.footer')

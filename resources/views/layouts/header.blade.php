@@ -77,6 +77,20 @@
 			overflow-x: hidden;
 		}
 	}
+	#costos{
+		width: 100%;
+	}
+	
+	@media (max-width: 767px) {
+		#costos {
+			min-width: 240px !important;
+			overflow-x: hidden;
+		}
+	}
+	
+	/*#elpanel{
+		width: 50%;
+	}*/
 
 </style>
 </head>
@@ -118,7 +132,7 @@
 		      </form> -->
 				<ul class="nav navbar-nav navbar-right">
 					<li><button data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn">Filtrar Modelos</button></li>
-			        <li><a href="contacto" style="color: #fAfAfA; font: oblique 130% cursive;">Contactenos</a></li>			        
+			        <li><a href="{{  url('contacto') }}" style="color: #fAfAfA; font: oblique 130% cursive;">Contactenos</a></li>			        
 			        <li class="dropdown">			    				
 		        </li>
 		      </ul>    
@@ -132,7 +146,7 @@
 				     <div class="col-sm-4 col-md-12">
 							<div class="panel-group">
 								<div class="panel panel-info">
-							      <div class="panel-heading">Escoge tu modelo a tu gusto</div>
+							      <div class="panel-heading"><font color="white">Escoge tu modelo a tu gusto</font></div>
 							      	<div class="panel-body">							      	
 								      	<div class="col-md-3"> 	
 								      		<form action="filmod" method="post">
