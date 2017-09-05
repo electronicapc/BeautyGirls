@@ -325,7 +325,7 @@ class InicioController extends Controller
 		<title>Beauty Girls</title>
 		</head>
 		<body>
-		<p>NUevo contacto pagina Web</p>
+		<p>Nuevo contacto pagina Web</p>
 		<table>
 		<tr>
 		<th>Nombre:</th>
@@ -352,7 +352,7 @@ class InicioController extends Controller
     	
     	// More headers
     	$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
-    	$headers .= 'Cc: gunsnjrc@gamil.com' . "\r\n";
+    	$headers .= 'Cc: gunsnjrc@gmail.com' . "\r\n";
     	
     	mail($to,$subject,$message,$headers);
     	
