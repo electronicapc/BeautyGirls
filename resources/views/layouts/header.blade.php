@@ -25,7 +25,7 @@
    		 background:#6E6E6E !important;
 	}
 	.carousel-inner{
-	    height: 700px;
+	    height: 500px;
 	}	
 	
 	@media (max-width: 767px) {
@@ -137,17 +137,17 @@
 								      	<div class="col-md-3"> 	
 								      		<form action="filmod" method="post">
 									      		<dl class="dl-horizontal">
-										      		<dt><label>Estatura	</label></dt>	
+										      		<dt><label>Estatura	en cm</label></dt>	
 										      		<dd><span class="button-checkbox">
-												        <button type="button" class="btn btn-md btn-block" data-color="primary">150 cm a 160 cm</button>
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">150 a 160</button>
 												        <input type="checkbox" name="E1" class="hidden" checked />
 												    </span>	
 												    <span class="button-checkbox">
-												        <button type="button" class="btn btn-md btn-block" data-color="primary">160 cm a 170 cm</button>
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">160 a 170</button>
 												        <input type="checkbox" name="E2" class="hidden" checked />
 												    </span>	
 												    <span class="button-checkbox">
-												        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 170 cm</button>
+												        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 170</button>
 												        <input type="checkbox" name="E3" class="hidden" checked />
 												    </span>	</dd>
 												    <hr />
@@ -171,38 +171,38 @@
 										<div class="col-md-3">	
 										<dl class="dl-horizontal"> 
 											<div class="form-group">   												    
-											    <dt><label>Edad</label></dt>
+											    <dt><label>Edad A&ntilde;os</label></dt>
 									      		<dd><span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">18 a 22 A&ntilde;os</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">18 a 22</button>
 											        <input type="checkbox" name="A1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">22 a 26 A&ntilde;os</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">22 a 26</button>
 											        <input type="checkbox" name="A2" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">M&aacute;s de 26 A&ntilde;os</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">M&aacute;s de 26</button>
 											        <input type="checkbox" name="A3" class="hidden" checked />
 											    </span></dd>
 											   </div>
 											    <hr />
-											    <dt><label>Valor Hora en Miles</label></dt>	
+											    <dt><label>Valor Hora en Miles COP</label></dt>	
 										    
 									      		<dd><span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">100 a 200 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">100 a 200</button>
 											        <input type="checkbox" name="H1" class="hidden" checked />
 											    </span>
 											    <span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">200 a 300 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">200 a 300</button>
 											        <input type="checkbox" name="H2" class="hidden" checked />
 											    </span>
 
 											    <span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">300 a 400 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">300 a 400</button>
 											        <input type="checkbox" name="H3" class="hidden" checked />
 											    </span>	
 											    <span class="button-checkbox">
-											        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 400 COP</button>
+											        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 400</button>
 											        <input type="checkbox" name="H4" class="hidden" checked />
 											    </span></dd>  
 											    
