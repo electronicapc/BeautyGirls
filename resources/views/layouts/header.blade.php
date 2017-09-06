@@ -156,7 +156,7 @@ function myFunction() {
 							      <div class="panel-heading"><font color="white">Escoge tu modelo a tu gusto</font></div>
 							      	<div class="panel-body">							      	
 								      	<div class="col-md-3"> 	
-								      		<form action="{{ url(filmod) }}" method="post" id="myForm">
+								      		<form action="{{ url('filmod') }}" method="post" id="myForm">
 									      		<dl class="dl-horizontal">
 										      		<dt><label>Estatura	en cm</label></dt>	
 										      		<dd><span class="button-checkbox">
