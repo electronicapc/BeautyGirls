@@ -156,35 +156,35 @@ function myFunction() {
 							      <div class="panel-heading"><font color="white">Escoge tu modelo a tu gusto</font></div>
 							      	<div class="panel-body">							      	
 								      	<div class="col-md-3"> 	
-								      		<form action="filmod" method="post" id="myForm">
+								      		<form action="{{ url(filmod) }}" method="post" id="myForm">
 									      		<dl class="dl-horizontal">
 										      		<dt><label>Estatura	en cm</label></dt>	
 										      		<dd><span class="button-checkbox">
 												        <button type="button" class="btn btn-md btn-block" data-color="primary">150 a 160</button>
-												        <input type="checkbox" name="E1" class="hidden" checked />
+												        <input type="checkbox" name="E1" class="hidden"  />
 												    </span>	
 												    <span class="button-checkbox">
 												        <button type="button" class="btn btn-md btn-block" data-color="primary">160 a 170</button>
-												        <input type="checkbox" name="E2" class="hidden" checked />
+												        <input type="checkbox" name="E2" class="hidden"  />
 												    </span>	
 												    <span class="button-checkbox">
 												        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 170</button>
-												        <input type="checkbox" name="E3" class="hidden" checked />
+												        <input type="checkbox" name="E3" class="hidden"  />
 												    </span>	</dd>
 												    <hr />
 												    <div class="form-group">
 													    <dt><label>Color piel</label></dt>
 											      		<dd><span class="button-checkbox">
 													        <button type="button" class="btn btn-md btn-block" data-color="primary">Blanca</button>
-													        <input type="checkbox" name="CP1" class="hidden" checked />
+													        <input type="checkbox" name="CP1" class="hidden" />
 													    </span>
 													    <span class="button-checkbox">
 													        <button type="button" class="btn btn-md btn-block" data-color="primary">Morena</button>
-													        <input type="checkbox" name="CP2" class="hidden" checked />
+													        <input type="checkbox" name="CP2" class="hidden"  />
 													    </span>
 													    <span class="button-checkbox">
 													        <button type="button" class="btn btn-md btn-block" data-color="primary">negra</button>
-													        <input type="checkbox" name="CP3" class="hidden" checked />
+													        <input type="checkbox" name="CP3" class="hidden" />
 													    </span></dd>
 												    </div>		
 												</dl>  
@@ -195,15 +195,15 @@ function myFunction() {
 											    <dt><label>Edad A&ntilde;os</label></dt>
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">18 a 22</button>
-											        <input type="checkbox" name="A1" class="hidden" checked />
+											        <input type="checkbox" name="A1" class="hidden" />
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">22 a 26</button>
-											        <input type="checkbox" name="A2" class="hidden" checked />
+											        <input type="checkbox" name="A2" class="hidden"/>
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">M&aacute;s de 26</button>
-											        <input type="checkbox" name="A3" class="hidden" checked />
+											        <input type="checkbox" name="A3" class="hidden" />
 											    </span></dd>
 											   </div>
 											    <hr />
@@ -211,20 +211,20 @@ function myFunction() {
 										    
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">100 a 200</button>
-											        <input type="checkbox" name="H1" class="hidden" checked />
+											        <input type="checkbox" name="H1" class="hidden"/>
 											    </span>
 											    <span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">200 a 300</button>
-											        <input type="checkbox" name="H2" class="hidden" checked />
+											        <input type="checkbox" name="H2" class="hidden" />
 											    </span>
 
 											    <span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">300 a 400</button>
-											        <input type="checkbox" name="H3" class="hidden" checked />
+											        <input type="checkbox" name="H3" class="hidden" />
 											    </span>	
 											    <span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">+ 400</button>
-											        <input type="checkbox" name="H4" class="hidden" checked />
+											        <input type="checkbox" name="H4" class="hidden"  />
 											    </span></dd>  
 											    
 											   <!--  <span class="button-checkbox">
