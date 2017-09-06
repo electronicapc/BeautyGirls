@@ -207,7 +207,7 @@ function myFunction() {
 											    </span></dd>
 											   </div>
 											    <hr />
-											    <dt><label>Valor Hora en Miles COP</label></dt>	
+											    <dt><label>Valor Hora en Miles</label></dt>	
 										    
 									      		<dd><span class="button-checkbox">
 											        <button type="button" class="btn btn-md btn-block" data-color="primary">100 a 200</button>
