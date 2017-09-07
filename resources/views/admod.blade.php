@@ -248,7 +248,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
 				  <div class="col-md-4">
-				    <input id="foto4" name="foto4" class="input-file" type="file" required="">
+				    <input id="foto4" name="foto4" class="file" type="file" data-show-preview="true" required="">
 				  </div>
 				</div>
 				

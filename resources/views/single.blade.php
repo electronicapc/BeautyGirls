@@ -148,4 +148,10 @@
 	 </div>
  </div> -->
 <div style="margin-top : 50px"></div> 
+
+<script>
+$('#filtro').click(function () {
+    $('.navbar-collapse').collapse('hide');
+});
+</script>
  @includeIf('layouts.footer')

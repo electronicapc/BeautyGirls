@@ -138,7 +138,7 @@ function myFunction() {
 		        <button type="submit" class="btn btn-default">Submit</button>
 		      </form> -->
 				<ul class="nav navbar-nav navbar-right">
-					<li><button data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn">Filtrar Modelos</button></li>
+					<li><button data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn" id="filtro">Filtrar Modelos</button></li>
 			        <li><a href="{{  url('contacto') }}" style="color: #fAfAfA; font: oblique 130% cursive;">Contactenos</a></li>			        
 			        <li class="dropdown">			    				
 		        </li>
