@@ -45,14 +45,14 @@
 			<br>
 			<div class="col-xs-12 col-md-6" id="costos">		
 				<div>
-			 	    <div class="panel panel-primary"	>
+			 	    <div class="panel panel-primary" style="color: #2E2E2E; font: oblique 105% cursive;">
 				      <div class="panel-heading"><strong>Costos de compa&ntilde;&iacute;a</strong></div>
 				      	<div class="panel-body">
 				      		<ul class="list-group">
-					  			<li class="list-group-item"><strong>Una hora: </strong>{{ $girls->v_one_h}}</li>
-					  			<li class="list-group-item"><strong>Dos horas: </strong>{{ $girls->v_two_h}}</li>
-					  			<li class="list-group-item"><strong>Tres horas: </strong>{{ $girls->v_three_h}}</li>
-					  			<li class="list-group-item"><strong>Fin de Semana: </strong>{{ $girls->v_fds}}</li>
+					  			<li class="list-group-item"><strong>Una hora: </strong>{{ $girls->v_one_h}} <button class="btn btn-warning pull-right btn-sm">Lo quiero</button></li>
+					  			<li class="list-group-item"><strong>Dos horas: </strong>{{ $girls->v_two_h}}<button class="btn btn-warning pull-right btn-sm">Lo quiero</button></li>
+					  			<li class="list-group-item"><strong>Tres horas: </strong>{{ $girls->v_three_h}}<button class="btn btn-warning pull-right btn-sm">Lo quiero</button></li>
+					  			<li class="list-group-item"><strong>Fin de Semana: </strong>{{ $girls->v_fds}}<button class="btn btn-warning pull-right btn-sm">Lo quiero</button></li>
 					  		</ul>	
 				      	
 						</div>
@@ -67,7 +67,7 @@
 			</div>
 		</div>	
 		<div class="col-xs-12 col-md-5 col-lg-5">
-			<div class="panel panel-default" style="color: #2E2E2E; font: oblique 130% cursive;" id="elpanel">
+			<div class="panel panel-default" style="color: #2E2E2E; font: oblique 105% cursive;" id="elpanel">
 			      <div class="panel-heading"><strong>Nuestra Modelo</strong></div>
 			      <div class="panel-body">
 					  <ul class="list-group" id="caract">

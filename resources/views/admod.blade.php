@@ -19,11 +19,6 @@
   <div class="container">
 	 <div class="row">
 	 	<div class="col-xs-12 col-md-12">
-	 	@if (session('status'))
-		<div class="alert alert-success">
-		  <strong>Exito!</strong> {{ session('status') }}
-		</div>
-		@endif
 			<form class="form-horizontal" method="POST" action="modelos/add" accept-charset="UTF-8" enctype="multipart/form-data">
 				<fieldset>
 				@if($errors->any())
