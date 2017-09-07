@@ -1,4 +1,4 @@
- @includeIf('layouts.header')  
+ @includeIf('layouts.header') 
  <div class="container">
 	 <div class="row">
 	 @foreach ($girls as $list)
