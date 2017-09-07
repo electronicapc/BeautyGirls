@@ -154,4 +154,4 @@ $('#filtro').click(function () {
     $('.navbar-collapse').collapse('hide');
 });
 </script>
- @includeIf('layouts.footer')
+@includeIf('layouts.footer')
