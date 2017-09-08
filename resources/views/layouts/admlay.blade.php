@@ -20,6 +20,15 @@
 <style>
 
 </style>
+
+<!--  -->
+<script src="{{ asset('js/fileinput.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/sortable.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/locales/es.js') }}" type="text/javascript"></script>
+<link href="{{ asset('css/fileinput.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('themes/explorer/theme.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<script src="{{ asset('themes/explorer/theme.js') }}" type="text/javascript"></script>
+
 </head>
 <body>
     <div id="wrapper">

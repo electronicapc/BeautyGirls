@@ -214,8 +214,8 @@
 				    <textarea class="form-control" id="intereses" name="intereses" placeholder="Cuentanos algo de ti..." required=""></textarea>
 				  </div>
 				</div>
+			<!--	Subir archivos
 				
-				<!-- File Button --> 
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.1">Foto No.1</label>
 				  <div class="col-md-4">
@@ -223,7 +223,7 @@
 				  </div>
 				</div>
 				
-				<!-- File Button --> 
+				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.2">Foto No.2</label>
 				  <div class="col-md-4">
@@ -231,7 +231,7 @@
 				  </div>
 				</div>
 				
-				<!-- File Button --> 
+				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.3">Foto No.3</label>
 				  <div class="col-md-4">
@@ -239,14 +239,15 @@
 				  </div>
 				</div>
 				
-				<!-- File Button --> 
+				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
 				  <div class="col-md-4">
-				    <input id="foto4" name="foto4" class="file" type="file" data-show-preview="true" required="">
+				    <input id="foto4" name="foto4" class="file" type="file" required="">
 				  </div>
 				</div>
-				
+				-->
+				<input id="file" name="file[]" type="file" multiple class="file-loading">
 							
 				<!-- Button -->
 				<div class="form-group">
@@ -263,5 +264,18 @@
 
 	</div>
 </div>
- 
+
+<script>
+   $("#file").fileinput({
+        maxFilePreviewSize: 10240,
+		language: "es",
+		uploadUrl: "",
+		allowedFileExtensions: ["jpg", "png", "gif"],
+		uploadAsync: false,
+		//inFileCount: 2,
+		maxFileCount: 5,
+		overwriteInitial: false	,
+		dropZoneEnabled: true			
+    });
+</script> 
 @endsection
