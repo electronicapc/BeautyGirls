@@ -4,32 +4,43 @@
 		 	<div class="col-xs-12 col-md-7">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				  <!-- Indicators -->
-				  <ol class="carousel-indicators">	
-					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					    <li data-target="#myCarousel" data-slide-to="1"></li>
-					    <li data-target="#myCarousel" data-slide-to="2"></li>
-					    <li data-target="#myCarousel" data-slide-to="3"></li>				  
-				  </ol>
 				  @php 
-	                 $imgpath  = asset('../storage/app/models').'/'.$girls->id.'.jpg';
+	                 $imgpath  = asset('../storage/app/models').'/'.$girls->id.'_0.jpg';
 	                 $imgpath1 = asset('../storage/app/models').'/'.$girls->id.'_1.jpg';
 	                 $imgpath2 = asset('../storage/app/models').'/'.$girls->id.'_2.jpg';
-	                 $imgpath3 = asset('../storage/app/models').'/'.$girls->id.'_3.jpg'
+	                 $imgpath3 = asset('../storage/app/models').'/'.$girls->id.'_3.jpg';
+					
+					$imagpath = array();	                 
+	                for ($i = 0; $i <= 8; $i++) 
+					{
+						if ( file_exists('../storage/app/models/'.$girls->id.'_'.$i.'.jpg'))
+						{
+							$imagpath[$i] = asset('../storage/app/models').'/'.$girls->id.'_'.$i.'.jpg';
+						}
+					}
+	                 
 	              @endphp
+	              <ol class="carousel-indicators">	
+					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					    @for ($i = 0; $i < 10; $i++) 
+							@if(isset($imagpath[$i]))
+					    		<li data-target="#myCarousel" data-slide-to="{{ $i }}"></li>
+					    	@endif
+						@endfor   
+		  
+				  </ol>
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
 					   <div class="item active">
-					      <img src="{{ $imgpath }}" alt="{{ $girls->name}}" class="img-rounded">
+					      <img src="{{isset($imagpath[0]) ? $imagpath[0] : asset('../storage/app/models/Noexistefoto.jpg') }}" alt="{{ $girls->name}}" class="img-rounded">
 					    </div>
-					   <div class="item">
-					      <img src="{{ $imgpath1 }}" alt="{{ $imgpath1 }}" class="img-rounded">
-					   </div>
-					   <div class="item">
-					      <img src="{{ $imgpath2 }}" alt="{{ $imgpath2 }}" class="img-rounded">
-					   </div>
-					   <div class="item">
-					      <img src="{{ $imgpath3 }}" alt="{{ $imgpath3 }}" class="img-rounded">
-					   </div>
+					@for ($i = 0; $i < 10; $i++) 
+						@if(isset($imagpath[$i]))	   
+						   <div class="item">
+						      <img src="{{ isset($imagpath[$i]) ? $imagpath[$i] : asset('../storage/app/models/Noexistefoto.jpg') }}" alt="{{ $imgpath1 }}" class="img-rounded">
+						   </div>
+					   @endif
+					@endfor   
 				
 					  <!-- Left and right controls -->
 					  <a class="left carousel-control" href="#myCarousel" data-slide="prev">

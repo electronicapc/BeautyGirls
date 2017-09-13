@@ -19,7 +19,7 @@
   <div class="container">
 	 <div class="row">
 	 	<div class="col-xs-12 col-md-12">
-			<form class="form-horizontal" method="POST" action="modelos/add" accept-charset="UTF-8" enctype="multipart/form-data">
+			<form class="form-horizontal" method="POST" action="add" accept-charset="UTF-8" enctype="multipart/form-data">
 				<fieldset>
 				@if($errors->any())
 					<h4>{{$errors->first()}}</h4>
@@ -238,16 +238,24 @@
 				    <input id="foto3" name="foto3" class="input-file" type="file" required="">
 				  </div>
 				</div>
-				
+					-->			
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Foto No.4">Intrucciones de carga de fotos:</label>
+						<div class="col-md-4">
+							<p>1) Con el bot&oacute;n examinar ubique las fotos a subir, se recomienda tener m&iacute;nimo 4 fotos.</p>
+							<p>2) Seleccione todas las fotos a subir (ctrl + click).</p>
+							<p>3) Una vez est&eacute;n todas seleccionadas pulsar OK.</p>
+							<p>4) Se mostrar&aacute; una previsualizaci&oacute;n de estas.</p>
+							<p>4) Tener en cuenta que es mejor fotos con resoluci&oacute;n mayor a 1440 x 1080, s&oacute;lo formato jpeg.</p>
+						</div>
+				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
-				  <div class="col-md-4">
-				    <input id="foto4" name="foto4" class="file" type="file" required="">
-				  </div>
-				</div>
-				-->
-				<input id="file" name="file[]" type="file" multiple class="file-loading">
+				  <label class="col-md-4 control-label" for="Foto No.4">Carga de fotos:</label>
+				  	<div class="col-md-4">
+						<input id="foto" name="foto[]" type="file" multiple class="file-loading">
+					</div>
+				</div>		
 							
 				<!-- Button -->
 				<div class="form-group">
@@ -266,15 +274,16 @@
 </div>
 
 <script>
-   $("#file").fileinput({
+   $("#foto").fileinput({
         maxFilePreviewSize: 10240,
 		language: "es",
-		uploadUrl: "",
-		allowedFileExtensions: ["jpg", "png", "gif"],
+		allowedFileExtensions: ["jpg", "png"],
 		uploadAsync: false,
-		//inFileCount: 2,
-		maxFileCount: 5,
+		//minFileCount: 4,
+		maxFileCount: 9,
+		autoReplace: true,
 		overwriteInitial: false	,
+		showUpload: false,
 		dropZoneEnabled: true			
     });
 </script> 

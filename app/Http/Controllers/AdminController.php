@@ -23,6 +23,8 @@ class AdminController extends Controller
 	
 	public function addmods(Request $request)
 	{
+		//$lafoto[0]->storeAs('models', 'pruebasdragdrop.jpg');
+		//dd($request);
 		$name		= $request->input('name');
 		$age		= $request->input('age');
 		$colojo		= $request->input('colojo');
@@ -49,13 +51,16 @@ class AdminController extends Controller
 		(isset($language2)) ? $sep2 = '/' : $sep2 = '';
 		(isset($language3)) ? $sep3 = '/' : $sep3 = '';
 		//(isset($language4)) ? $sep4 = '/' : '';
+		//Request de fotos
+		$lafoto 	= $request->file('foto');		
+		//
 		$language 	= $language1 .$sep1. $language2.$sep2.$language3.$sep3.$language4;
 		
 		
-		if ($request->hasFile('foto1') && $request->hasFile('foto2') && $request->hasFile('foto3') && $request->hasFile('foto4'))
-		{
-			if ($request->file('foto1')->isValid() && $request->file('foto2')->isValid() && $request->file('foto3')->isValid() && $request->file('foto4')->isValid())
-			{
+		//if ($request->hasFile($lafoto[0]) && $request->hasFile($lafoto[1]) && $request->hasFile($lafoto[2]) && $request->hasFile($lafoto[3]))
+		//{
+		//	if ($request->file('foto[0]')->isValid() && $request->file('foto[1]')->isValid() && $request->file('foto[2]')->isValid() && $request->file('foto[3]')->isValid())
+		//	{
 				$idgirl = new girl;
 				$idgirl->name 			= $name;
 				$idgirl->tambus 		= $tambus;
@@ -81,22 +86,26 @@ class AdminController extends Controller
 		
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
-				$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
-				$request->file('foto2')->storeAs('models', $idgirl->id.'_1.jpg');
-				$request->file('foto3')->storeAs('models', $idgirl->id.'_2.jpg');
-				$request->file('foto4')->storeAs('models', $idgirl->id.'_3.jpg');
+				
+				for ($i = 0; $i <= 8; $i++) 
+				{
+					if ( !empty ($lafoto[$i]) ) {
+						$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
+					}
+				}
+
 				//return $path;
 				return redirect('/admin/modelos/add')->with('status', 'Se agreg&oacute; la modelo correctamente');
-			}
-			else
-			{
-				return back()->withErrors(['fotos' => ['Las fotos no son validas.']]);
-			}
-		}
-		else
-		{
-			return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
-		}
+			//}
+			//else
+			//{
+			//	return back()->withErrors(['fotos' => ['Las fotos no son validas.']]);
+			//}
+		//}
+		//else
+		//{
+		//	return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
+		//}
 	
 	}
 	

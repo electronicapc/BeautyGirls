@@ -21,7 +21,7 @@
 
 </style>
 
-<!--  -->
+<!-- Fotos -->
 <script src="{{ asset('js/fileinput.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/sortable.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/locales/es.js') }}" type="text/javascript"></script>

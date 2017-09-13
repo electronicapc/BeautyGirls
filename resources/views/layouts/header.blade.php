@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="{{  asset('css/bootstrap.min.css') }}"  crossorigin="anonymous">
 <link rel="stylesheet" href="{{  asset('css/bootstrap-theme.min.css') }}"  crossorigin="anonymous">
 <link rel="stylesheet" href="{{  asset('css/style.css') }}" >
-<script src="{{  asset('js/bootstrap.min.js') }}"></script>
 <script src="{{  asset('js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{  asset('js/bootstrap.min.js') }}"></script>
 
 <!-- Custom CSS -->
 <link href="{{  asset('css/sb-admin-2.css') }}" rel="stylesheet">

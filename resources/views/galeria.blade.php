@@ -3,7 +3,7 @@
 	 <div class="row">
 	 @foreach ($girls as $list)
 	 	 @php 
-        	$imgpath = asset('../storage/app/models').'/'.$list->id.'.jpg'
+        	$imgpath = asset('../storage/app/models').'/'.$list->id.'_0.jpg'
     	 @endphp
 		  <div class="col-md-4">
 		    <div class="thumbnail">
