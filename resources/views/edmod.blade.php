@@ -277,35 +277,22 @@
 							
 							<!-- File Button --> 
 							<div class="form-group">
-							  <label class="col-md-4 control-label" for="Foto No.1">Foto No.1</label>
-							  <div class="col-md-4">
-							    <input id="foto1" name="foto1" class="input-file" type="file">
-							  </div>
+								<label class="col-md-4 control-label" for="Foto No.4">Intrucciones de carga de fotos:</label>
+									<div class="col-md-4">
+										<p>1) Con el bot&oacute;n examinar ubique las fotos a subir, se recomienda tener m&iacute;nimo 4 fotos.</p>
+										<p>2) Seleccione todas las fotos a subir (ctrl + click).</p>
+										<p>3) Una vez est&eacute;n todas seleccionadas pulsar OK.</p>
+										<p>4) Se mostrar&aacute; una previsualizaci&oacute;n de estas.</p>
+										<p>4) Tener en cuenta que es mejor fotos con resoluci&oacute;n mayor a 1440 x 1080, s&oacute;lo formato jpeg.</p>
+									</div>
 							</div>
 							
-							<!-- File Button --> 
 							<div class="form-group">
-							  <label class="col-md-4 control-label" for="Foto No.2">Foto No.2</label>
-							  <div class="col-md-4">
-							    <input id="foto2" name="foto2" class="input-file" type="file">
-							  </div>
-							</div>
-							
-							<!-- File Button --> 
-							<div class="form-group">
-							  <label class="col-md-4 control-label" for="Foto No.3">Foto No.3</label>
-							  <div class="col-md-4">
-							    <input id="foto3" name="foto3" class="input-file" type="file">
-							  </div>
-							</div>
-							
-							<!-- File Button --> 
-							<div class="form-group">
-							  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
-							  <div class="col-md-4">
-							    <input id="foto4" name="foto4" class="input-file" type="file" >
-							  </div>
-							</div>
+							  <label class="col-md-4 control-label" for="Foto">Carga de fotos:</label>
+							  	<div class="col-md-4">
+									<input id="foto" name="foto[]" type="file" multiple class="file-loading" required="">
+								</div>
+							</div>	
 							
 										
 							<!-- Button -->
@@ -327,5 +314,18 @@
 		</div>
 	</div>
 </div>
-
+<script>
+   $("#foto").fileinput({
+        maxFilePreviewSize: 10240,
+		language: "es",
+		allowedFileExtensions: ["jpg", "png"],
+		uploadAsync: false,
+		//minFileCount: 4,
+		maxFileCount: 9,
+		autoReplace: true,
+		overwriteInitial: false	,
+		showUpload: false,
+		dropZoneEnabled: true			
+    });
+</script>
 @endsection

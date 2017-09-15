@@ -48,7 +48,7 @@
                                 @endphp
                                 @foreach ($girl as $list)
                                 	@php 
-                                		$imgpath = asset('../storage/app/models').'/'.$list->id.'.jpg'
+                                		$imgpath = asset('../storage/app/models').'/'.$list->id.'_0.jpg'
                                 	@endphp
                                 	@if(($parity % 2) == 0)
 	                                    <tr class="odd gradeA">

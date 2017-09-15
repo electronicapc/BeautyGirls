@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="{{  asset('css/style.css') }}" >
 <script src="{{  asset('js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{  asset('js/bootstrap.min.js') }}"></script>
+<!--  Condicional internet explorer-->
+<!--[if lt IE 10]>
+    <div id="yourID" class="yourClass">
+        Para poder visualizar correctamente esta p&aacute;gina, se debe usar navegador Chrome versiones superiores a 40, Mozilla Firefox versiones superiores a 40, Internet Explorer 10 o superior
+    </div>
+<![endif]-->
 
 <!-- Custom CSS -->
 <link href="{{  asset('css/sb-admin-2.css') }}" rel="stylesheet">

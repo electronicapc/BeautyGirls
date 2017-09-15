@@ -176,7 +176,7 @@ class AdminController extends Controller
 		
 		//obtenemos el campo file definido en el formulario
 		$idgirl->save();
-		if ($request->hasFile('foto1'))
+		/*if ($request->hasFile('foto1'))
 		{
 			$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
 		}
@@ -191,8 +191,15 @@ class AdminController extends Controller
 		if ($request->hasFile('foto4'))
 		{
 			$request->file('foto4')->storeAs('models', $idgirl->id.'_3.jpg');
-		}
+		}*/
 		//return $path;
+		for ($i = 0; $i <= 8; $i++)
+		{
+			if ( !empty ($lafoto[$i]) ) {
+				$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
+			}
+		}
+		//
 		return redirect('/admin/addmodel')->with('status', 'Se modifico la modelo correctamente');
 	
 	}
