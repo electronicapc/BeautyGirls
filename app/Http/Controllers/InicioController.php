@@ -360,5 +360,35 @@ class InicioController extends Controller
     	return redirect('/contacto')->with('status', 'Su solicitud fue recibida, pronto nos comunicaremos con usted');
     	
     }
+
+    public function payu($id,$pago,$time)
+    {
+    
+    	if($time == 1)
+    	{
+    		$prepay	= Girl::where('id', $id)->select('v_one_h')->first();
+    		$value	= $prepay->v_one_h;
+    	}
+    	elseif($time == 2)
+    	{
+    		$prepay	= Girl::where('id', $id)->select('v_two_h')->first();
+    		$value	= $prepay->v_two_h;
+    	}
+    	elseif($time == 3)
+    	{
+    		$prepay	= Girl::where('id', $id)->select('v_three_h')->first();
+    		$value	= $prepay->v_three_h;
+    	}
+    	elseif($time == 4)
+    	{
+    		$prepay	= Girl::where('id', $id)->select('v_fds')->first();
+    		$value	= $prepay->v_fds;
+    	}
+    	if ($pago != $value)
+    	{
+    		return back()->withErrors(['fotos' => ['Se detecto un proceso anormal, favor vuelva a intentar.'. $pago.' diferente'. $value]]);
+    	}
+    
+    }
     
 }

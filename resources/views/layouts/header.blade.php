@@ -101,7 +101,14 @@ function myFunction() {
 		  columns: 2;
 		  -webkit-columns: 2;
 		  -moz-columns: 2;
-		}	  
+		}	 
+		
+	@media (min-width: 768px){  
+	#adquirir {
+	 		columns: 4;
+	 		-webkit-columns: 4;
+		 	-moz-columns: 4;
+		}	 
 	}
 </style>
 </head>
