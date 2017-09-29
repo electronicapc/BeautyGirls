@@ -21,6 +21,7 @@ Route::get('/contacto', function () {
 });
 //Rutas de pago
 Route::get('/pay/{id}/{pago}/{time}','InicioController@payu')->where(['id' => '[1-9]+'],['pago' => '[1-9]+'],['time' => '[1-9]+']);
+Route::post('/payfull','InicioController@formpayu');
 //
 Route::post('contacto','InicioController@contacto');
 Auth::routes();

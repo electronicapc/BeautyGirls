@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Girl;
 use App\Servshow;
 use DB;
+use Carbon\Carbon;
 
 class InicioController extends Controller
 {
+
     public function index()
     {
     	$girls		= Girl::where('activo', 'SI')->where('prepay', 'NO')->select('id','name','age')->get();
@@ -366,29 +368,62 @@ class InicioController extends Controller
     
     	if($time == 1)
     	{
-    		$prepay	= Girl::where('id', $id)->select('v_one_h')->first();
+    		$prepay	= Girl::where('id', $id)->select('v_one_h','name')->first();
+    		$name	= $prepay->name;
     		$value	= $prepay->v_one_h;
     	}
     	elseif($time == 2)
     	{
-    		$prepay	= Girl::where('id', $id)->select('v_two_h')->first();
+    		$prepay	= Girl::where('id', $id)->select('v_two_h','name')->first();
+    		$name	= $prepay->name;
     		$value	= $prepay->v_two_h;
     	}
     	elseif($time == 3)
     	{
-    		$prepay	= Girl::where('id', $id)->select('v_three_h')->first();
+    		$prepay	= Girl::where('id', $id)->select('v_three_h','name')->first();
+    		$name	= $prepay->name;
     		$value	= $prepay->v_three_h;
     	}
     	elseif($time == 4)
     	{
-    		$prepay	= Girl::where('id', $id)->select('v_fds')->first();
+    		$prepay	= Girl::where('id', $id)->select('v_fds','name')->first();
+    		$name	= $prepay->name;
     		$value	= $prepay->v_fds;
     	}
     	if ($pago != $value)
     	{
     		return back()->withErrors(['fotos' => ['Se detecto un proceso anormal, favor vuelva a intentar.'. $pago.' diferente'. $value]]);
     	}
+    	else
+    	{
+    		return view('checkout')->with('id', $id)->with('name', $name)->with('value', $value);
+    	}
     
+    }
+    
+    public function formpayu(Request $request)
+    {
+    	$this->validate($request, [
+    			'nomcli'				=> 'required|max:255',
+    			'email' 				=> 'required|confirmed',
+    			'email_confirmation'	=> 'required',
+    	]);
+    	
+    	$id			= $request->input('id');
+    	$name		= $request->input('name');
+    	$nomcli		= $request->input('nomcli');
+    	$email		= $request->input('email');
+    	$value		= $request->input('value');
+    	//Ingreso datos de preventa
+    	$idven = new Pago;
+    	$idven->idGirl 			= $id;
+    	$idven->valpag			= $value;
+    	$idven->medpag			= 'PAYU';
+    	$idven->mes				= Carbon::now('America/Bogota')->month;
+    	$idven->confirmado		= 'NO';
+    	$idven->save();
+    	//Fin datos preventa
+    	return view('confpago')->with('id', $id)->with('name', $name)->with('value', $value)->with('email', $email)->with('nomcli', $nomcli);
     }
     
 }
