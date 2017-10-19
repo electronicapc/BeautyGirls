@@ -1,4 +1,12 @@
  @includeIf('layouts.header') 
+ <!-- Fotos -->
+<script src="{{ asset('js/fileinput.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/sortable.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/locales/es.js') }}" type="text/javascript"></script>
+<link href="{{ asset('css/fileinput.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('themes/explorer/theme.css') }}" media="all" rel="stylesheet" type="text/css"/>
+<script src="{{ asset('themes/explorer/theme.js') }}" type="text/javascript"></script>
+<!--Fin fotos -->
   <div class="container">
 	 <div class="row">
 	 	<div class="col-xs-12 col-md-12">
@@ -22,7 +30,7 @@
 				  <label class="col-md-4 control-label" for="Nombre">Nombre</label>  
 				  <div class="col-md-4">
 				  <input id="name" name="name" type="text" placeholder="Nombre" class="form-control input-md" required="">
-				  <span class="help-block">Intoduzca su nombre tal como desee que aparezca</span>  
+				  <span class="help-block">Intoduzca su nombre art&iacute;stico tal como desee que aparezca</span>  
 				  </div>
 				</div>
 				
@@ -31,7 +39,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Edad">Edad</label>  
 				  <div class="col-md-4">
-				  <input id="age" name="age" type="number" placeholder="Edad" class="form-control input-md" required="">
+				  <input id="age" name="age" type="number" min="18" max="50" placeholder="Edad" class="form-control input-md" required="">
 				  <span class="help-block">Introduzca su Edad real</span>  
 				  </div>
 				</div>
@@ -72,9 +80,9 @@
 				  <label class="col-md-4 control-label" for="selectbasic">Color de Piel</label>
 				  <div class="col-md-4">
 				    <select id="colpil" name="colpil" class="form-control" required="">
-				      <option value="1">Blanca</option>
-				      <option value="2">Morena</option>
-				      <option value="2">Negra</option>
+				      <option value="Blanca">Blanca</option>
+				      <option value="Morena">Morena</option>
+				      <option value="Negra">Negra</option>
 				    </select>
 				  </div>
 				</div>
@@ -191,47 +199,69 @@
 				    </label>
 					</div>
 				  </div>
-				</div>
-								
+				</div>							
 				
 				<!-- Textarea -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Intereses">Intereses</label>
+				  <label class="col-md-4 control-label" for="intereses">Intereses</label>
 				  <div class="col-md-4">                     
 				    <textarea class="form-control" id="intereses" name="intereses" placeholder="Cuentanos algo de ti..." required=""></textarea>
 				  </div>
 				</div>
 				
-				<!-- File Button --> 
+				<!--Obligatoriosa -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Foto No.1">Foto No.1</label>
-				  <div class="col-md-4">
-				    <input id="foto1" name="foto1" class="input-file" type="file" required="">
+				  <label class="col-md-4 control-label" for="condiciones">Soy mayor de edad</label>
+				  <div class="col-md-4">                     
+				    <input type="checkbox" name="condiciones" id="condiciones" value="mayor" required="">
+				    Verifico que soy mayor de edad
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="condiciones">Acepto los t&eacute;rminos y condiciones</label>
+				  <div class="col-md-4">                     
+				    <input type="checkbox" name="condiciones" id="condiciones" value="mayor" required="">
+				    	<a href="#" data-toggle="modal" data-target="#myModal">Acepto los t&eacute;rminos y condiciones</a> de la prestaci&oacute;n del servicio
+				    	<!-- Modal -->
+							<div id="myModal" class="modal fade" role="dialog">
+							  <div class="modal-dialog">
+							
+							    <!-- Modal content-->
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal">&times;</button>
+							        <h4 class="modal-title">T&eacute;rminos y condiciones de la publicaci&oacute;n en esta p&aacute;gina</h4>
+							      </div>
+							      <div class="modal-body">
+							        <p>Some text in the modal.</p>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							      </div>
+							    </div>
+							
+							  </div>
+							</div>
 				  </div>
 				</div>
 				
 				<!-- File Button --> 
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Foto No.2">Foto No.2</label>
-				  <div class="col-md-4">
-				    <input id="foto2" name="foto2" class="input-file" type="file" required="">
-				  </div>
+					<label class="col-md-4 control-label" for="Foto No.4">Intrucciones de carga de fotos:</label>
+						<div class="col-md-4">
+							<p>1) Con el bot&oacute;n examinar ubique las fotos a subir, se recomienda tener m&iacute;nimo 4 fotos.</p>
+							<p>2) Seleccione todas las fotos a subir (ctrl + click).</p>
+							<p>3) Una vez est&eacute;n todas seleccionadas pulsar OK.</p>
+							<p>4) Se mostrar&aacute; una previsualizaci&oacute;n de estas.</p>
+							<p>4) Tener en cuenta que es mejor fotos con resoluci&oacute;n mayor a 1440 x 1080, s&oacute;lo formato jpeg.</p>
+						</div>
 				</div>
 				
-				<!-- File Button --> 
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Foto No.3">Foto No.3</label>
-				  <div class="col-md-4">
-				    <input id="foto3" name="foto3" class="input-file" type="file" required="">
-				  </div>
-				</div>
-				
-				<!-- File Button --> 
-				<div class="form-group">
-				  <label class="col-md-4 control-label" for="Foto No.4">Foto No.4</label>
-				  <div class="col-md-4">
-				    <input id="foto4" name="foto4" class="input-file" type="file" required="">
-				  </div>
+				  <label class="col-md-4 control-label" for="Foto">Carga de fotos:</label>
+				  	<div class="col-md-4">
+						<input id="foto" name="foto[]" type="file" multiple class="file-loading" required="">
+					</div>
 				</div>
 				
 							
@@ -247,5 +277,18 @@
 		</div>	 
   	 </div>
   </div>	
- 
+ <script>
+   $("#foto").fileinput({
+        maxFilePreviewSize: 10240,
+		language: "es",
+		allowedFileExtensions: ["jpg", "png"],
+		uploadAsync: false,
+		//minFileCount: 4,
+		maxFileCount: 9,
+		autoReplace: true,
+		overwriteInitial: false	,
+		showUpload: false,
+		dropZoneEnabled: true			
+    });
+</script> 
  @includeIf('layouts.footer')  

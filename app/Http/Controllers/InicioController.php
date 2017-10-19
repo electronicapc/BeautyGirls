@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Girl;
-use App\Servshow;
+use App\Pago;
 use DB;
 use Carbon\Carbon;
 
@@ -244,12 +244,12 @@ class InicioController extends Controller
 		(isset($language3)) ? $sep3 = '/' : $sep3 = '';
 		//(isset($language4)) ? $sep4 = '/' : '';
 		$language 	= $language1 .$sep1. $language2.$sep2.$language3.$sep3.$language4;
-	
+		$lafoto 	= $request->file('foto');
 		
-		if ($request->hasFile('foto1') && $request->hasFile('foto2') && $request->hasFile('foto3') && $request->hasFile('foto4'))
-		{
-			if ($request->file('foto1')->isValid() && $request->file('foto2')->isValid() && $request->file('foto3')->isValid() && $request->file('foto4')->isValid())
-			{
+		//if ($request->hasFile('foto1') && $request->hasFile('foto2') && $request->hasFile('foto3') && $request->hasFile('foto4'))
+		//{
+		//	if ($request->file('foto1')->isValid() && $request->file('foto2')->isValid() && $request->file('foto3')->isValid() && $request->file('foto4')->isValid())
+		//	{
 				$idgirl = new girl;
 				$idgirl->name 			= $name;
 				$idgirl->tambus 		= $tambus;
@@ -272,25 +272,33 @@ class InicioController extends Controller
 				$idgirl->rank 			= 5;
 				$idgirl->activo			= 'NO';
 				$idgirl->prepay			= 'NO';
-
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
-				$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
+				/*$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
 				$request->file('foto2')->storeAs('models', $idgirl->id.'_1.jpg');
 				$request->file('foto3')->storeAs('models', $idgirl->id.'_2.jpg');
 				$request->file('foto4')->storeAs('models', $idgirl->id.'_3.jpg');
 				//return $path;
-				return redirect('/inscribir')->with('status', 'Se agreg&oacute; la modelo correctamente');
-			}
-			else 
-			{
-				return back()->withErrors(['fotos' => ['Las fotos no son validas.']]);
-			}
-		}
-		else 
-		{
-			return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
-		}
+				return redirect('/inscribir')->with('status', 'Se agreg&oacute; la modelo correctamente');*/
+				//return $path;
+				for ($i = 0; $i <= 8; $i++)
+				{
+					if ( !empty ($lafoto[$i]) ) {
+						$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
+					}
+				}
+				//
+				return back()->with('status', 'Se Agrego la modelo correctamente');
+			//}
+			//else 
+			//{
+			//	return back()->withErrors(['fotos' => ['Las fotos no son validas.']]);
+			//}
+		//}
+		//else 
+		//{
+		//	return back()->withErrors(['fotos' => ['Las fotos deben estar completas.']]);
+		//}
 		
     	
     	//return view('single')->with('lists', $lists)->with('girls', $girls);
@@ -396,7 +404,7 @@ class InicioController extends Controller
     	}
     	else
     	{
-    		return view('checkout')->with('id', $id)->with('name', $name)->with('value', $value);
+    		return view('checkout')->with('id', $id)->with('name', $name)->with('value', $value)->with('time', $time);
     	}
     
     }
@@ -419,11 +427,14 @@ class InicioController extends Controller
     	$idven->idGirl 			= $id;
     	$idven->valpag			= $value;
     	$idven->medpag			= 'PAYU';
-    	$idven->mes				= Carbon::now('America/Bogota')->month;
+    	$idven->email			= $email;
+    	$mes					= Carbon::now('America/Bogota')->month;
+    	$idven->mes				= $mes;
     	$idven->confirmado		= 'NO';
     	$idven->save();
     	//Fin datos preventa
-    	return view('confpago')->with('id', $id)->with('name', $name)->with('value', $value)->with('email', $email)->with('nomcli', $nomcli);
+    	$last_id = $idven->id;
+    	return view('confpago')->with('id', $id)->with('name', $name)->with('value', $value)->with('email', $email)->with('nomcli', $nomcli)->with('refpag', $last_id);
     }
     
 }

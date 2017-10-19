@@ -150,6 +150,7 @@ function myFunction() {
 		      </form> -->
 				<ul class="nav navbar-nav navbar-right">
 					<li><button data-toggle="collapse" data-target="#demo" class="btn btn-info navbar-btn" id="filtro">Filtrar Modelos</button></li>
+					<li><button class="btn btn-warning navbar-btn"><a href="{{  url('inscribir') }}" data-toggle="tooltip" title="Registrate, sube tus fotos y comienza a ganar dinero" style="color: #fAfAfA;">Pautar con nosotros</a></button></li>
 			        <li><a href="{{  url('contacto') }}" style="color: #fAfAfA; font: oblique 130% cursive;">Contactenos</a></li>			        
 			        <li class="dropdown">			    				
 		        </li>

@@ -19,7 +19,7 @@
 				    </div>
 				@endif
 				<!-- Form Name -->
-				<legend>Formulario de Registro de Modelos</legend>
+				<legend>Formulario de registro de pago</legend>
 				
 				<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 							
@@ -31,6 +31,7 @@
 				  <input id="name" name="name" value="{{ $name }}" type="hidden" placeholder="Nombre" class="form-control input-md" required="">
 				  <input id="id" name="id" value="{{ $id }}" type="hidden" placeholder="id" class="form-control input-md" required="">
 				  <input id="value" name="value" value="{{ $value }}" type="hidden" placeholder="id" class="form-control input-md" required="">
+				  <input id="time" name="time" value="{{ $time }}" type="hidden" placeholder="id" class="form-control input-md" required="">
 				  </div>
 				</div>
 				
@@ -40,6 +41,34 @@
 				  <label class="col-md-4 control-label" for="Edad">Valor</label>  
 				  <div class="col-md-4">
 				  <p class="lead">${{ $value }}</p>
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Edad">Tiempo de servicio</label>  
+				  <div class="col-md-4">
+					  @php
+						  switch($time){
+							    case 1:
+							        $time = "Una hora";
+							        break;
+				
+							    case 2:
+							      	 $time = "Dos horas";
+							        break;
+						      
+								case 3:
+							        $time = "Tres horas";
+							       break;
+							    
+							   case 4:
+							        $time = "Cuatro horas";
+							        break; 
+		
+							}
+					  @endphp
+					  <p class="lead">{{$time }}</p>
 				  </div>
 				</div>
 
