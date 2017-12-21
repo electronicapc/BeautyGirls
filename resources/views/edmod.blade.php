@@ -290,7 +290,7 @@
 							<div class="form-group">
 							  <label class="col-md-4 control-label" for="Foto">Carga de fotos:</label>
 							  	<div class="col-md-4">
-									<input id="foto" name="foto[]" type="file" multiple class="file-loading" required="">
+									<input id="foto" name="foto[]" type="file" multiple class="file-loading">
 								</div>
 							</div>	
 							

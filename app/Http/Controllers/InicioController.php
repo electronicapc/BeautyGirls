@@ -239,6 +239,7 @@ class InicioController extends Controller
 		$language2	= $request->input('language2');
 		$language3	= $request->input('language3');
 		$language4	= $request->input('language4');
+		$coddes		= $request->input('suscode');
 		(isset($language1)) ? $sep1 = '/' : $sep1 = '';  
 		(isset($language2)) ? $sep2 = '/' : $sep2 = '';
 		(isset($language3)) ? $sep3 = '/' : $sep3 = '';
@@ -272,6 +273,7 @@ class InicioController extends Controller
 				$idgirl->rank 			= 5;
 				$idgirl->activo			= 'NO';
 				$idgirl->prepay			= 'NO';
+				$idgirl->suscode		= $coddes;
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
 				/*$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
@@ -287,6 +289,46 @@ class InicioController extends Controller
 						$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
 					}
 				}
+				//
+				//Email
+				$to = "gunsnjrc@yahoo.com, gunsnjrc_999@hotmail.com";
+				$subject = "Cuestionario pagina BeautyGirls";
+				$message = "
+					<html>
+						<head>
+							<title>Beauty Girls</title>
+						</head>
+						<body>
+						<p>Nuevo contacto pagina Web</p>
+							<table>
+							<tr>
+							<th>Nombre:</th>
+							<th>Motivo:</th>
+							<th>telefono:</th>
+							<th>Mensaje:</th>
+							<th>Correo:</th>
+							</tr>
+							<tr>
+							<td>$name</td>
+							<td>$motivo	</td>
+							<td>$telefono</td>
+							<td>$mensaje</td>
+							<td>$correo</td>
+							</tr>
+							</table>
+						</body>
+					</html>
+					";
+				
+				// Always set content-type when sending HTML email
+				$headers = "MIME-Version: 1.0" . "\r\n";
+				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+				 
+				// More headers
+				$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
+				$headers .= 'Cc: gunsnjrc@gmail.com' . "\r\n";
+				 
+				mail($to,$subject,$message,$headers);
 				//
 				return back()->with('status', 'Se Agrego la modelo correctamente');
 			//}

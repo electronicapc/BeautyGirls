@@ -264,6 +264,22 @@
 					</div>
 				</div>
 				
+				
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">C&oacute;digo de descuento</label>  
+				  <div class="col-md-4">
+				  <input id="coddes" name="tamcin" type="text" placeholder="Codigo de descuento" class="form-control input-md">
+				  <span class="help-block">Si tienes un C&oacute;digo de descuento introducelo aqu&iacute; y obt&eacute;n el primer mes gratis</span>  
+				  </div>
+				</div>
+				
+				 <input type="hidden" name="email" value="Norway">$id = Auth::email();
+				
+				
+				
+				
+				
 							
 				<!-- Button -->
 				<div class="form-group">
