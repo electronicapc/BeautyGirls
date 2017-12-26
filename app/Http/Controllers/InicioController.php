@@ -216,8 +216,8 @@ class InicioController extends Controller
     
     public function inscribir(Request $request)
     {
-
 		$name		= $request->input('name');
+		$email		= $request->input('email');
 		$age		= $request->input('age');
 		$colojo		= $request->input('colojo');
 		$city		= $request->input('city');
@@ -229,6 +229,7 @@ class InicioController extends Controller
 		$estat		= $request->input('estat');
 		$confis 	= $request->input('confis');
 		$interest 	= $request->input('intereses');
+		$coddes		= $request->input('suscode');
 		//valores
 		$v_one_h	= $request->input('v_one_h');
 		$v_two_h	= $request->input('v_two_h');
@@ -239,7 +240,7 @@ class InicioController extends Controller
 		$language2	= $request->input('language2');
 		$language3	= $request->input('language3');
 		$language4	= $request->input('language4');
-		$coddes		= $request->input('suscode');
+
 		(isset($language1)) ? $sep1 = '/' : $sep1 = '';  
 		(isset($language2)) ? $sep2 = '/' : $sep2 = '';
 		(isset($language3)) ? $sep3 = '/' : $sep3 = '';
@@ -276,6 +277,7 @@ class InicioController extends Controller
 				$idgirl->suscode		= $coddes;
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
+				$insertedId 			= $idgirl->id;
 				/*$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
 				$request->file('foto2')->storeAs('models', $idgirl->id.'_1.jpg');
 				$request->file('foto3')->storeAs('models', $idgirl->id.'_2.jpg');
@@ -291,29 +293,25 @@ class InicioController extends Controller
 				}
 				//
 				//Email
-				$to = "gunsnjrc@yahoo.com, gunsnjrc_999@hotmail.com";
-				$subject = "Cuestionario pagina BeautyGirls";
+				$to = "gunsnjrc@yahoo.com, gunsnjrc_999@hotmail.com,$email";
+				$subject = "Incripci&oacute;n Bellas Chic";
 				$message = "
 					<html>
 						<head>
 							<title>Beauty Girls</title>
 						</head>
 						<body>
-						<p>Nuevo contacto pagina Web</p>
+						<p>Nuevo modelo Bellas Chicas</p>
 							<table>
 							<tr>
 							<th>Nombre:</th>
-							<th>Motivo:</th>
-							<th>telefono:</th>
-							<th>Mensaje:</th>
+							<th>Identificador:</th>
 							<th>Correo:</th>
 							</tr>
 							<tr>
 							<td>$name</td>
-							<td>$motivo	</td>
-							<td>$telefono</td>
-							<td>$mensaje</td>
-							<td>$correo</td>
+							<td>$insertedId</td>
+							<td>$email/td>
 							</tr>
 							</table>
 						</body>
@@ -328,9 +326,9 @@ class InicioController extends Controller
 				$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
 				$headers .= 'Cc: gunsnjrc@gmail.com' . "\r\n";
 				 
-				mail($to,$subject,$message,$headers);
+				//mail($to,$subject,$message,$headers);
 				//
-				return back()->with('status', 'Se Agrego la modelo correctamente');
+				return back()->with('status', 'Se Agreg&oacute; la modelo correctamente, recibir&aacute;s confirmaci&oacute;n a '.$email);
 			//}
 			//else 
 			//{

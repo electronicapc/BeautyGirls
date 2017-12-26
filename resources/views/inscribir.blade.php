@@ -61,7 +61,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">Color Ojos</label>  
 				  <div class="col-md-4">
-				  <input id="colojo" name="colojo" type="text" placeholder="Color Ojos" class="form-control input-md" required="">
+				  <input id="colojo" name="colojo" type="text" placeholder="Color Ojos" class="form-control input-md" required="" maxlength="12">
 				  <span class="help-block">Introduzca su Color de Ojos real</span>  
 				  </div>
 				</div>
@@ -70,7 +70,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">Color de Pelo</label>  
 				  <div class="col-md-4">
-				  <input id="colpel" name="colpel" type="text" placeholder="Color de Pelo" class="form-control input-md" required="">
+				  <input id="colpel" name="colpel" type="text" placeholder="Color de Pelo" class="form-control input-md" required="" maxlength="12">
 				  <span class="help-block">Introduzca su color de pelo actual</span>  
 				  </div>
 				</div>
@@ -91,7 +91,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">Tama&ntildeo de Busto</label>  
 				  <div class="col-md-4">
-				  <input id="tambus" name="tambus" type="text" placeholder="Tamano de Busto" class="form-control input-md" required="">
+				  <input id="tambus" name="tambus" type="text" placeholder="Tamano de Busto" class="form-control input-md" required="" maxlength="4">
 				  <span class="help-block">Introduzca su tama&ntildeo de busto en Talla incluya copa</span>  
 				  </div>
 				</div>
@@ -269,18 +269,13 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">C&oacute;digo de descuento</label>  
 				  <div class="col-md-4">
-				  <input id="coddes" name="tamcin" type="text" placeholder="Codigo de descuento" class="form-control input-md">
+				  <input id="suscode" name="suscode" type="text" placeholder="Codigo de descuento" class="form-control input-md">
 				  <span class="help-block">Si tienes un C&oacute;digo de descuento introducelo aqu&iacute; y obt&eacute;n el primer mes gratis</span>  
 				  </div>
 				</div>
-				
-				 <input type="hidden" name="email" value="Norway">$id = Auth::email();
-				
-				
-				
-				
-				
-							
+				<!-- Campo de correo -->
+				 <input type="hidden" name="email" value="{{Auth::user()->email}}">
+		
 				<!-- Button -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton">Enviar Registro</label>
