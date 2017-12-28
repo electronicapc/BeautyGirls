@@ -34,17 +34,25 @@
 							
 							<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 							<input type="hidden" name="id" value="{{ $producto['id'] }}">
+							<input type="hidden" name="idg" value="{{ $idgirl }}">
 										
 							<!-- Text input-->
 							<div class="form-group">	
-							  <label class="col-md-4 control-label" for="Nombre">Id cliente</label>  
+							  <label class="col-md-4 control-label" for="Id_Cliente">Id cliente</label>  
 							  <div class="col-md-4">
-							  <input id="idg" name="idg" type="text" placeholder="idGirl" value="{{ $idgirl }}" class="form-control input-md" disabled>
-							  
+							  <input id="" name="" type="text" placeholder="idGirl" value="{{ $idgirl }}" class="form-control input-md" disabled>							  
 							  </div>
 							</div>
 							
-										
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="medpag">Valor pagado</label>  
+							  <div class="col-md-4">
+							  <input id="valpag" name="valpag" type="number" placeholder="Valor pagado" value="{{ $producto['valpag'] }}"  class="form-control input-md" required="">
+							  <span class="help-block">Introduzca el medio de pago</span>  
+							  </div>
+							</div>
+							<!-- Select Basic -->			
 							<!-- Text input-->
 							<div class="form-group">
 							  <label class="col-md-4 control-label" for="medpag">Medio de Pago</label>  
@@ -88,8 +96,8 @@
 							<div class="form-group">
 							  <label class="col-md-4 control-label" for="textinput">Email</label>  
 							  <div class="col-md-4">
-							  <input id="email" name="email" type="text" placeholder="Email" value="{{ $producto['email'] }}" class="form-control input-md" required="">
-							  <span class="help-block">Introduzca su coorreo electronico</span>  
+							  <input id="email" name="email" type="email" placeholder="Email" value="{{ $producto['email'] }}" class="form-control input-md" required="">
+							  <span class="help-block">Introduzca su correo electronico</span>  
 							  </div>
 							</div>
 				

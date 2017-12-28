@@ -10,10 +10,10 @@
 	</div>	
 	<div class="row" style="margin-bottom:10px">
 		<div class="center-block col-sm-12">   
-			<a href="modelos/add"><button type="button" class="btn btn-success btn-lg pull-right">
+			<!-- <a href="modelos/add"><button type="button" class="btn btn-success btn-lg pull-right">
 					<span class="glyphicon glyphicon-plus-sign"></span>
-			</button>
-			</a>
+			</button> 
+			</a>-->
 		</div>
 	</div>
 </div>

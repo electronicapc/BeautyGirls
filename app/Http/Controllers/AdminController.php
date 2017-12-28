@@ -241,7 +241,7 @@ class AdminController extends Controller
 	
 	public function pagpm($id)
 	{
-		$eusr		 = Pago::find($id);		
+		$eusr		 = Pago::where('idGirl', $id)->get()->first();	
 		
 		return view('edpay')->with('producto', $eusr)->with('idgirl', $id);
 	}
@@ -249,6 +249,7 @@ class AdminController extends Controller
 	public function svpay(Request $request)
 	{
 		$idg				= $request->input('idg');
+		$valpag				= $request->input('valpag');
 		$medpag				= $request->input('medpag');
 		$mes				= $request->input('mes');
 		$refpag				= $request->input('refpag');
@@ -256,56 +257,19 @@ class AdminController extends Controller
 		$confirmado			= $request->input('confirmado');
 
 		//Inicio update
-		$idgirl 			= Girl::find($request->input('id'));
-		$idgirl->name 		= $name;
-		$idgirl->tambus 	= $tambus;
-		$idgirl->colpel		= $colpel;
-		$idgirl->colojo	 	= $colojo;
-		$idgirl->colpil 	= $colpil;
-		$idgirl->confis 	= $confis;
-		$idgirl->tamcin		= $tamcin;
-		$idgirl->tamcol 	= $tamcol;
-		$idgirl->estat 		= $estat;
-		$idgirl->v_one_h 	= $v_one_h;
-		$idgirl->v_two_h 	= $v_two_h ;
-		$idgirl->v_three_h 	= $v_three_h;
-		$idgirl->v_fds 		= $v_fds;
-		$idgirl->age 		= $age;
-		$idgirl->city 		= $city;
-		$idgirl->language 	= $language ;
-		$idgirl->interest 	= $interest;
-		$idgirl->vip 		= $vip;
-		$idgirl->rank 		= $rank;
-		$idgirl->activo		= $activo;
-		$idgirl->prepay		= $prepay;
-	
-		//obtenemos el campo file definido en el formulario
-		$idgirl->save();
-		/*if ($request->hasFile('foto1'))
-			{
-			$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
-			}
-			if ($request->hasFile('foto2'))
-			{
-			$request->file('foto2')->storeAs('models', $idgirl->id.'_1.jpg');
-			}
-			if ($request->hasFile('foto3'))
-			{
-			$request->file('foto3')->storeAs('models', $idgirl->id.'_2.jpg');
-			}
-			if ($request->hasFile('foto4'))
-			{
-			$request->file('foto4')->storeAs('models', $idgirl->id.'_3.jpg');
-			}*/
-		//return $path;
-		for ($i = 0; $i <= 8; $i++)
-		{
-			if ( !empty ($lafoto[$i]) ) {
-				$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
-			}
-		}
+		$pago 				= new Pago();
+		$pago->idGirl 		= $idg;
+		$pago->mes 			= $mes;
+		$pago->valpag		= $valpag;
+		$pago->medpag	 	= $medpag;
+		$pago->refpag	 	= $refpag;
+		$pago->email	 	= $email;
+		$pago->confirmado	= $confirmado;
+
+		//guardado de pago
+		$pago->save();
 		//
-		return redirect('/admin/addmodel')->with('status', 'Se modifico la modelo correctamente');
+		return redirect('/admin/ventas')->with('status', 'Se agrego el pago correctamente');
 	
 	}
 	

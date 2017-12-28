@@ -55,7 +55,7 @@ Route::group(['middleware' =>'auth'], function () {
 		
 		//Ventas o pagos
 		Route::get('/admin/modelos/pago/{id}', 'AdminController@pagpm')->where(['id' => '[0-9]+']);
-		Route::post('/admin/modelos/edicionp', 'AdminController@svpay');
+		Route::post('/admin/modelos/pago/edicionp', 'AdminController@svpay');
 	});
 
 });
