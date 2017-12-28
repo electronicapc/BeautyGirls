@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Girl;
 use App\User;
+use App\Pago;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +20,18 @@ class AdminController extends Controller
 	{
 		$lists 	= Girl::all();
 		return view('lstmod')->with('girl', $lists);
+	
+	}
+	
+	public function ventas()
+	{
+		//$lists 	= Girl::all();
+		$lists		= DB::table('girls')
+					//->join('pagos', 'girls.id', '=', 'pagos.id')
+					->select('girls.id','girls.name', 'girls.email', 'girls.vip','girls.created_at','girls.updated_at')
+					->where('girls.activo', '=', 'SI')
+					->get();//dd($lists);
+		return view('lstpay')->with('girl', $lists);
 	
 	}
 	
@@ -223,6 +237,76 @@ class AdminController extends Controller
 		}
 		$eusr->save();
 		return redirect('/admin/user')->with('status', 'Se modifico la modelo correctamente');
+	}
+	
+	public function pagpm($id)
+	{
+		$eusr		 = Pago::find($id);		
+		
+		return view('edpay')->with('producto', $eusr)->with('idgirl', $id);
+	}
+	//Guardar pagos
+	public function svpay(Request $request)
+	{
+		$idg				= $request->input('idg');
+		$medpag				= $request->input('medpag');
+		$mes				= $request->input('mes');
+		$refpag				= $request->input('refpag');
+		$email				= $request->input('email');
+		$confirmado			= $request->input('confirmado');
+
+		//Inicio update
+		$idgirl 			= Girl::find($request->input('id'));
+		$idgirl->name 		= $name;
+		$idgirl->tambus 	= $tambus;
+		$idgirl->colpel		= $colpel;
+		$idgirl->colojo	 	= $colojo;
+		$idgirl->colpil 	= $colpil;
+		$idgirl->confis 	= $confis;
+		$idgirl->tamcin		= $tamcin;
+		$idgirl->tamcol 	= $tamcol;
+		$idgirl->estat 		= $estat;
+		$idgirl->v_one_h 	= $v_one_h;
+		$idgirl->v_two_h 	= $v_two_h ;
+		$idgirl->v_three_h 	= $v_three_h;
+		$idgirl->v_fds 		= $v_fds;
+		$idgirl->age 		= $age;
+		$idgirl->city 		= $city;
+		$idgirl->language 	= $language ;
+		$idgirl->interest 	= $interest;
+		$idgirl->vip 		= $vip;
+		$idgirl->rank 		= $rank;
+		$idgirl->activo		= $activo;
+		$idgirl->prepay		= $prepay;
+	
+		//obtenemos el campo file definido en el formulario
+		$idgirl->save();
+		/*if ($request->hasFile('foto1'))
+			{
+			$request->file('foto1')->storeAs('models', $idgirl->id.'.jpg');
+			}
+			if ($request->hasFile('foto2'))
+			{
+			$request->file('foto2')->storeAs('models', $idgirl->id.'_1.jpg');
+			}
+			if ($request->hasFile('foto3'))
+			{
+			$request->file('foto3')->storeAs('models', $idgirl->id.'_2.jpg');
+			}
+			if ($request->hasFile('foto4'))
+			{
+			$request->file('foto4')->storeAs('models', $idgirl->id.'_3.jpg');
+			}*/
+		//return $path;
+		for ($i = 0; $i <= 8; $i++)
+		{
+			if ( !empty ($lafoto[$i]) ) {
+				$lafoto[$i]->storeAs('models', $idgirl->id.'_'.$i.'.jpg');
+			}
+		}
+		//
+		return redirect('/admin/addmodel')->with('status', 'Se modifico la modelo correctamente');
+	
 	}
 	
 }

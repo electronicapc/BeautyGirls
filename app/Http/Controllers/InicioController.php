@@ -275,6 +275,7 @@ class InicioController extends Controller
 				$idgirl->activo			= 'NO';
 				$idgirl->prepay			= 'NO';
 				$idgirl->suscode		= $coddes;
+				$idgirl->email			= $email;
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
 				$insertedId 			= $idgirl->id;

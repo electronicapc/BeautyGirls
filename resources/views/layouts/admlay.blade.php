@@ -286,7 +286,7 @@
                             <a href="{{URL::to('admin/user')}}"><i class="fa fa-table fa-fw"></i>Usuarios</a>
                         </li>
                         <li>
-                            <a href="{{URL::to('admin/ventas')}}"><i class="fa fa-edit fa-fw"></i>Ventas</a>
+                            <a href="{{URL::to('admin/ventas')}}"><i class="fa fa-edit fa-fw"></i>Pagos</a>
                         </li>
                     </ul>
                 </div>

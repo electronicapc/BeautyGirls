@@ -50,10 +50,12 @@ Route::group(['middleware' =>'auth'], function () {
 		Route::get('/admin/modelos/{id}', 'AdminController@edtmods')->where(['id' => '[0-9]+']);
 		Route::post('/admin/modelos/edicion', 'AdminController@edtmosv');
 		
-		//Usuarois
+		//Usuarios
 		Route::get('/admin/user/{id}/{isAdmin}', 'AdminController@addmin')->where(['id' => '[0-9]+']);
 		
 		//Ventas o pagos
+		Route::get('/admin/modelos/pago/{id}', 'AdminController@pagpm')->where(['id' => '[0-9]+']);
+		Route::post('/admin/modelos/edicionp', 'AdminController@svpay');
 	});
 
 });
