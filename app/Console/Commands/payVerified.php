@@ -44,9 +44,14 @@ class payVerified extends Command
 		$girls		= Girl::where('activo', 'SI')->get();
     	//$lists	= Pago::where('id', $id)->get()->first();
 		$date 		= Carbon::now();
+		$date 		= $date->format('Y-m-d');
+		$start 		= Carbon::now()->startOfMonth();
+		$start		= $start->format('Y-m-d');
+		$end		= Carbon::now()->endOfMonth();
+		$end		= $end->format('Y-m-d');
     	foreach( $girls as $girl ) 
     	{
-    		$bytes_written = Storage::put('file.txt', $girl->name);
+    		$bytes_written = Storage::put('file.txt', $girl->name.$start.$end);
 	    	if ($bytes_written == false)
 	    	{
 	    		die("Error writing to file");
