@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use App\Girl;
 use App\Pago;
 use Storage;
+use DB;
 use Carbon\Carbon;
 
 class payVerified extends Command
@@ -45,13 +46,16 @@ class payVerified extends Command
     	//$lists	= Pago::where('id', $id)->get()->first();
 		$date 		= Carbon::now();
 		$date 		= $date->format('Y-m-d');
+		$month 		= Carbon::now()->month;
 		$start 		= Carbon::now()->startOfMonth();
 		$start		= $start->format('Y-m-d');
 		$end		= Carbon::now()->endOfMonth();
 		$end		= $end->format('Y-m-d');
     	foreach( $girls as $girl ) 
     	{
-    		$bytes_written = Storage::put('file.txt', $girl->name.$start.$end);
+    		
+    		$pago	= DB::table('pagos')->whereMonth('updated_at', $month)->get();
+    		$bytes_written = Storage::put('file.txt', $girl->name.$start.$end."fin mes".$month);
 	    	if ($bytes_written == false)
 	    	{
 	    		die("Error writing to file");
