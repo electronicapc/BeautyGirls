@@ -54,7 +54,19 @@ class payVerified extends Command
     	foreach( $girls as $girl ) 
     	{
     		
-    		$pago	= DB::table('pagos')->whereMonth('updated_at', $month)->get();
+    		$pagos	= DB::table('pagos')->whereMonth('updated_at', $month)->where('idGirl',$girl->id)->get();
+   			
+    		if($pagos)
+    		{
+    			$bytes_file = Storage::put('file2.txt', $girl->name." Si pago");
+    		}
+    		else 
+    		{
+    			//enviar correo
+    			//$bytes_file = Storage::put('file2.txt', $pago->mes);
+    			$bytes_file = Storage::put('file2.txt', $girl->name." NO pago". $pago->mes);
+    		}
+
     		$bytes_written = Storage::put('file.txt', $girl->name.$start.$end."fin mes".$month);
 	    	if ($bytes_written == false)
 	    	{

@@ -22,8 +22,12 @@ Route::get('/contacto', function () {
 //Rutas de pago
 Route::get('/pay/{id}/{pago}/{time}','InicioController@payu')->where(['id' => '[1-9]+'],['pago' => '[1-9]+'],['time' => '[1-9]+']);
 Route::post('/payfull','InicioController@formpayu');
-//
+//RUtas de contacto
 Route::post('contacto','InicioController@contacto');
+//Ruta de comandos
+Route::get('/command', function () {
+	Artisan::call('command:payVerified');
+});
 Auth::routes();
 //Rutas autenticadas
 Route::group(['middleware' =>'auth'], function () {
