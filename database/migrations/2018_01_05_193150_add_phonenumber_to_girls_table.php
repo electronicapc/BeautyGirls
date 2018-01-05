@@ -14,7 +14,7 @@ class AddPhonenumberToGirlsTable extends Migration
     public function up()
     {
         Schema::table('girls', function (Blueprint $table) {
-            $table->integer('phone_number')->nullable();
+            $table->bigInteger('phone_number')->nullable();
         });
     }
 
