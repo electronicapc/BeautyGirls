@@ -51,29 +51,66 @@ class payVerified extends Command
 		$start		= $start->format('Y-m-d');
 		$end		= Carbon::now()->endOfMonth();
 		$end		= $end->format('Y-m-d');
+		$pila = array();
     	foreach( $girls as $girl ) 
     	{
     		
-    		$pagos	= DB::table('pagos')->whereMonth('updated_at', $month)->where('idGirl',$girl->id)->get();
-   			
-    		if($pagos)
+    		$pagos	= DB::table('pagos')->select('pagos.id','pagos.mes','pagos.valpag','pagos.medpag')->whereMonth('updated_at', $month)->where('idGirl',$girl->id)->get();
+    		//dd($pagos);
+    		if($pagos->isNotEmpty())
     		{
-    			$bytes_file = Storage::put('file2.txt', $girl->name." Si pago");
+    			//$bytes_file = Storage::put('file2.txt', $girl->name." Si pago". $pagos->mes);
+    			//array_push($pila, $girl->name." Si pago". $pagos->get('mes'));
+    			
     		}
     		else 
     		{
     			//enviar correo
-    			//$bytes_file = Storage::put('file2.txt', $pago->mes);
-    			$bytes_file = Storage::put('file2.txt', $girl->name." NO pago". $pago->mes);
+    			//array_push($pila, $girl->name." NO pago");
+    			//$bytes_file = Storage::put('file3.txt', $girl->name." NO pago");
+    			$to = "gunsnjrc@yahoo.com, gunsnjrc_999@hotmail.com, $girl->email";
+    			$subject = "Comunicaci&oacute;n de BeatyGirls";
+    			 
+    			$message = "
+    			<html>
+    			<head>
+    				<title>Beauty Girls</title>
+    			</head>
+    				<body>
+		    			<p>Recordatorio de tu publicaci&oacute;n</p>
+						<p>Hola!</p>
+						<p>Parece ser que has olvidado renovar tu suscripci&oacute;n a nuestras publicaciones en <strong>Beauty Gilrs</strong></p>
+						<p>No te preocupes! Si quieres hacerlo puedes realizar la consignaci&oacute;n a la cuenta de ahorros Bancolombia 04206735401 a nombre de Nelson Reyes</p>
+		    			<p>Envianos soporte de la consignaci&oacute;n a WhatsApp 305 7159818 y listo!!!</p>
+		    			<p>Si ya realizaste el pago y enviaste el comprobante has caso omiso a este correo.</p>
+		    			<p><a href=\"www.lindasprepagos.com\">Visitanos!</a></p>
+	    			</body>
+    			</html>
+    			";
+    			 
+    			// Always set content-type when sending HTML email
+    			$headers = "MIME-Version: 1.0" . "\r\n";
+    			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    			 
+    			// More headers
+    			$headers .= 'From: <webmaster@beautygirls.com>' . "\r\n";
+    			$headers .= 'Cc: gunsnjrc@gmail.com' . "\r\n";
+    			 
+    			mail($to,$subject,$message,$headers);
+    			 
+    			//FIn email
+    			
+    			
     		}
 
-    		$bytes_written = Storage::put('file.txt', $girl->name.$start.$end."fin mes".$month);
-	    	if ($bytes_written == false)
+    		
+    		//$bytes_written = Storage::put('file.txt', $girl->name.$start.$end."fin mes".$month);
+	    	/*if ($bytes_written == false)
 	    	{
 	    		die("Error writing to file");
-	    	}
+	    	}*/
     	
     	}
-    	
+    	//dd($pila);
     }
 }

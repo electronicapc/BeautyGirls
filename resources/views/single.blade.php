@@ -63,10 +63,12 @@
 				      <div class="panel-heading"><strong>Costos de compa&ntilde;&iacute;a</strong></div>
 				      	<div class="panel-body">
 				      		<ul class="list-group" id="adquirir">
-					  			<li class="list-group-item"><strong>Una hora: </strong><p>${{ $girls->v_one_h}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_one_h}}/1"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>
+					  			<!-- <li class="list-group-item"><strong>Una hora: </strong><p>${{ $girls->v_one_h}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_one_h}}/1"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>
 					  			<li class="list-group-item"><strong>Dos horas: </strong><p> ${{ $girls->v_two_h}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_two_h}}/2"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>
 					  			<li class="list-group-item"><strong>Tres horas: </strong><p> ${{ $girls->v_three_h}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_three_h}}/3"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>
-					  			<li class="list-group-item"><strong>Fin de Semana: </strong><p>${{ $girls->v_fds}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_fds}}/4"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>
+					  			<li class="list-group-item"><strong>Fin de Semana: </strong><p>${{ $girls->v_fds}}</p><a href="../pay/{{$girls->id}}/{{ $girls->v_fds}}/4"><button class="btn btn-warning btn-sm">Lo quiero</button></a></li>  -->
+					  			<h2>Contactame!!!!</h2>
+					  			<h2>Mi Tel&eacute;fono:</h2><strong>{{ $girls->email }}</strong>
 					  		</ul>	
 				      	
 						</div>

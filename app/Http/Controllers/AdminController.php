@@ -51,6 +51,8 @@ class AdminController extends Controller
 		$estat		= $request->input('estat');
 		$confis 	= $request->input('confis');
 		$interest 	= $request->input('intereses');
+		$email 		= $request->input('mail');
+		$phone		= $request->input('phone_number');
 		//valores
 		$v_one_h	= $request->input('v_one_h');
 		$v_two_h	= $request->input('v_two_h');
@@ -97,7 +99,9 @@ class AdminController extends Controller
 				$idgirl->rank 			= 5;
 				$idgirl->activo			= 'NO';
 				$idgirl->prepay			= 'NO';
-		
+				$idgirl->email			= $phone;
+				$idgirl->phone_number	= $email;
+				
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
 				

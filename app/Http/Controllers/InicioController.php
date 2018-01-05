@@ -230,6 +230,7 @@ class InicioController extends Controller
 		$confis 	= $request->input('confis');
 		$interest 	= $request->input('intereses');
 		$coddes		= $request->input('suscode');
+		$phone		= $request->input('phone_number');
 		//valores
 		$v_one_h	= $request->input('v_one_h');
 		$v_two_h	= $request->input('v_two_h');
@@ -276,6 +277,7 @@ class InicioController extends Controller
 				$idgirl->prepay			= 'NO';
 				$idgirl->suscode		= $coddes;
 				$idgirl->email			= $email;
+				$idgirl->phone_number	= $phone;
 				//obtenemos el campo file definido en el formulario
 				$idgirl->save();
 				$insertedId 			= $idgirl->id;

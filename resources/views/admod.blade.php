@@ -38,7 +38,15 @@
 				  </div>
 				</div>
 				
-							
+				<!-- Text input correo-->
+				<div class="form-group">	
+				  <label class="col-md-4 control-label" for="Email">Email</label>  
+				  <div class="col-md-4">
+				  <input id="mail" name="mail" type="text" placeholder="mail" class="form-control input-md" required="">
+				  <span class="help-block">Intoduzca el e-mail de la modelo</span>  
+				  </div>
+				</div>	
+						
 				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Edad">Edad</label>  
@@ -214,6 +222,16 @@
 				    <textarea class="form-control" id="intereses" name="intereses" placeholder="Cuentanos algo de ti..." required=""></textarea>
 				  </div>
 				</div>
+				
+				<!-- Text input Telefono-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Tel&eacute;fono de contacto</label>  
+				  <div class="col-md-4">
+				  <input id="phone_number" name="phone_number" type="number" placeholder="Tel&eacute;fono de contacto" class="form-control input-md" required="">
+				  <span class="help-block">Introduzca el Tel&eacute;fono donde te contactar&aacute;n</span>  
+				  </div>
+				</div>
+				
 			<!--	Subir archivos
 				
 				<div class="form-group">
