@@ -29,7 +29,7 @@
 				<div class="form-group">	
 				  <label class="col-md-4 control-label" for="Nombre">Nombre</label>  
 				  <div class="col-md-4">
-				  <input id="name" name="name" type="text" placeholder="Nombre" class="form-control input-md" required="">
+				  <input id="name" name="name" type="text" placeholder="Nombre" class="form-control input-md" required>
 				  <span class="help-block">Intoduzca su nombre art&iacute;stico tal como desee que aparezca</span>  
 				  </div>
 				</div>
